@@ -99,12 +99,10 @@
 		C7D31A0C28BF51DF00940AFE /* WhereRU */ = {
 			isa = PBXGroup;
 			children = (
-				C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */,
-				C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */,
-				C7D31A1128BF51DF00940AFE /* ViewController.swift */,
-				C7D31A1328BF51E000940AFE /* Main.storyboard */,
-				C7D31A1628BF51E100940AFE /* Assets.xcassets */,
-				C7D31A1828BF51E100940AFE /* LaunchScreen.storyboard */,
+				C7D31A3D28BF522200940AFE /* Application */,
+				C7D31A3E28BF522F00940AFE /* View */,
+				C7D31A4128BF529000940AFE /* ViewModel */,
+				C7D31A4028BF525E00940AFE /* Resource */,
 				C7D31A1B28BF51E100940AFE /* Info.plist */,
 			);
 			path = WhereRU;
@@ -125,6 +123,48 @@
 				C7D31A3028BF51E100940AFE /* WhereRUUITestsLaunchTests.swift */,
 			);
 			path = WhereRUUITests;
+			sourceTree = "<group>";
+		};
+		C7D31A3D28BF522200940AFE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */,
+				C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		C7D31A3E28BF522F00940AFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7D31A1328BF51E000940AFE /* Main.storyboard */,
+				C7D31A3F28BF523A00940AFE /* Controller */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C7D31A3F28BF523A00940AFE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C7D31A1128BF51DF00940AFE /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C7D31A4028BF525E00940AFE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C7D31A1628BF51E100940AFE /* Assets.xcassets */,
+				C7D31A1828BF51E100940AFE /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		C7D31A4128BF529000940AFE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
