@@ -6,8 +6,8 @@
 //
 
 import UIKit
+import NMapsMap
 import CoreLocation
-import MapKit
 
 class FindPlaceViewController: UIViewController {
     
@@ -24,22 +24,36 @@ class FindPlaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LocationManager.locationManager.delegate = self
-        LocationManager.locationManager.requestWhenInUseAuthorization()
-        LocationManager.locationManager.startUpdatingLocation()
-        findPlaceView.mapView.showsUserLocation = true
-        findPlaceView.mapView.setUserTrackingMode(.follow, animated: true)
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
         
         let locationSearchTable = LoactionTableViewController()
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController?.searchResultsUpdater = locationSearchTable
         
+        let searchBar = resultSearchController?.searchBar
+        searchBar?.sizeToFit()
+        searchBar?.placeholder = "장소 검색"
         navigationItem.searchController = resultSearchController // 서치바 생성
         
-        resultSearchController?.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         
         locationSearchTable.mapView = findPlaceView.mapView
+        moveCurrentLocation()
+        addCurrentMarker()
+    }
+    
+    func moveCurrentLocation() {
+        guard let latitude = locationManager.location?.coordinate.latitude else {return}
+        guard let longitude = locationManager.location?.coordinate.longitude else {return}
+        let currentLocation = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
+        currentLocation.animation = .easeIn
+        findPlaceView.mapView.moveCamera(currentLocation)
+    }
+    
+    func addCurrentMarker() {
+        
     }
     
 }
@@ -101,22 +115,11 @@ extension FindPlaceViewController {
         
         present(requestLocationServiceAlert, animated: true, completion: nil)
     }
-    
-    func myLocation(_ latitude: CLLocationDegrees, _ longitude: CLLocationDegrees, _ delta: Double) {
-        let coordinateLocation = CLLocationCoordinate2DMake(latitude, longitude)
-        let spanValue = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
-        let locationRegion = MKCoordinateRegion(center: coordinateLocation, span: spanValue)
-        findPlaceView.mapView.setRegion(locationRegion, animated: true)
-    }
-    
 }
 
 extension FindPlaceViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let currentLocation = locations.last
-        guard let latitude = currentLocation?.coordinate.latitude else {return}
-        guard let longitude = currentLocation?.coordinate.longitude else {return}
-        myLocation(latitude, longitude, 0.01)
+
     }
     
 }

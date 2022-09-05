@@ -6,14 +6,15 @@
 //
 
 import UIKit
-import MapKit
+import NMapsMap
 
 class FindPlaceView: UIView {
     
-    let mapView : MKMapView = {
-        let map = MKMapView()
-        map.translatesAutoresizingMaskIntoConstraints = false
-        return map
+    let mapView : NMFMapView = {
+        let mapView = NMFMapView()
+//        mapView.showLocationButton = true
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
     }()
     
     override init(frame: CGRect) {
@@ -29,8 +30,6 @@ class FindPlaceView: UIView {
     private func setupView() {
         self.backgroundColor = .white
         self.addSubview(mapView)
-//        self.addSubview(placeSearchBar)
-
     }
     
     // MARK: AutoLayout
@@ -41,9 +40,6 @@ class FindPlaceView: UIView {
             mapView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-
-            
         ])
     }
 }

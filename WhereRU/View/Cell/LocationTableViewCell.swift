@@ -13,6 +13,7 @@ class LocationTableViewCell: UITableViewCell {
     
     let nameLabel : UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
