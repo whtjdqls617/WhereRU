@@ -29,6 +29,10 @@
 		C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */; };
 		C7D31A6228C1D4F100940AFE /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */; };
 		C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */; };
+		C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */; };
+		C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */; };
+		C7D31A6A28C49A5A00940AFE /* LoactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */; };
+		C7D31A6C28C4A19E00940AFE /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,10 @@
 		C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceView.swift; sourceTree = "<group>"; };
+		C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewController.swift; sourceTree = "<group>"; };
+		C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewModel.swift; sourceTree = "<group>"; };
+		C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionTableViewController.swift; sourceTree = "<group>"; };
+		C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +191,8 @@
 				C7D31A4E28C096BF00940AFE /* RoomsViewController.swift */,
 				C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */,
 				C7D31A5028C096D100940AFE /* SettingViewController.swift */,
+				C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */,
+				C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D31A5628C1CE2C00940AFE /* RoomsViewModel.swift */,
+				C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */,
+				C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -390,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D31A5728C1CE2C00940AFE /* RoomsViewModel.swift in Sources */,
+				C7D31A6A28C49A5A00940AFE /* LoactionTableViewController.swift in Sources */,
 				C7D31A5328C099CC00940AFE /* RoomsView.swift in Sources */,
 				C7D31A5528C099F600940AFE /* SettingView.swift in Sources */,
 				C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */,
@@ -400,11 +413,14 @@
 				C7D31A5128C096D100940AFE /* SettingViewController.swift in Sources */,
 				C7D31A4F28C096BF00940AFE /* RoomsViewController.swift in Sources */,
 				C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */,
+				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
 				C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */,
 				C7D31A4928C090CD00940AFE /* TabBarViewController.swift in Sources */,
 				C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */,
 				C7D31A4D28C0911700940AFE /* BaseViewController.swift in Sources */,
 				C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */,
+				C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */,
+				C7D31A6C28C4A19E00940AFE /* LocationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

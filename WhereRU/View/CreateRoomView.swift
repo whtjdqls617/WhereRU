@@ -90,6 +90,8 @@ class CreateRoomView: UIView {
         self.addSubview(friendsCollecionView)
         self.addSubview(placeStackView)
         self.addSubview(moneyStackView)
+        
+        
     }
     
     // MARK: AutoLayout
@@ -97,7 +99,7 @@ class CreateRoomView: UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             friendListLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            friendListLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 20),
+            friendListLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
             
             friendsCollecionView.topAnchor.constraint(equalTo: friendListLabel.bottomAnchor, constant: 20),
             friendsCollecionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),

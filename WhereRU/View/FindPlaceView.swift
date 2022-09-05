@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import MapKit
 
 class FindPlaceView: UIView {
-
-    let placeSearchBar : UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
-        return searchBar
+    
+    let mapView : MKMapView = {
+        let map = MKMapView()
+        map.translatesAutoresizingMaskIntoConstraints = false
+        return map
     }()
     
     override init(frame: CGRect) {
@@ -27,7 +28,8 @@ class FindPlaceView: UIView {
     
     private func setupView() {
         self.backgroundColor = .white
-        self.addSubview(placeSearchBar)
+        self.addSubview(mapView)
+//        self.addSubview(placeSearchBar)
 
     }
     
@@ -35,9 +37,12 @@ class FindPlaceView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            placeSearchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 100),
-            placeSearchBar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            placeSearchBar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
+            mapView.topAnchor.constraint(equalTo: self.topAnchor),
+            mapView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            mapView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            mapView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+
             
         ])
     }
