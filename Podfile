@@ -1,19 +1,3 @@
-# Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
-
-target 'WhereRU' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-	# Pods for WhereRU
-	pod 'NMapsMap'
-  target 'WhereRUTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'WhereRUUITests' do
-    # Pods for testing
-  end
-
-end
+version https://git-lfs.github.com/spec/v1
+oid sha256:3f5e1c79767c6ced5d25c3d79e5171bc616c73d0c7cb1e69e0025101906ca6bf
+size 385
