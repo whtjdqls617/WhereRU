@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35A8CBC31D72EA9BD4137C88 /* Pods_WhereRUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99042EB919D37B1A7F92F77F /* Pods_WhereRUTests.framework */; };
+		3F7D9C3122C1BF73FE4FA1BB /* Pods_WhereRU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ED7796A6DC3D8ACD995237F /* Pods_WhereRU.framework */; };
+		6BC334B887D79CDB36C83D8B /* Pods_WhereRU_WhereRUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6C12FC7EC4A1E73A0813E3B /* Pods_WhereRU_WhereRUUITests.framework */; };
 		C7D31A0E28BF51DF00940AFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */; };
 		C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */; };
 		C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */; };
@@ -29,6 +32,10 @@
 		C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */; };
 		C7D31A6228C1D4F100940AFE /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */; };
 		C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */; };
+		C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */; };
+		C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */; };
+		C7D31A6A28C49A5A00940AFE /* LoactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */; };
+		C7D31A6C28C4A19E00940AFE /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,16 +56,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C7D31A0A28BF51DF00940AFE /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereRU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ED7796A6DC3D8ACD995237F /* Pods_WhereRU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		17309D3DBAB52C96DB445858 /* Pods-WhereRU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU.release.xcconfig"; path = "Target Support Files/Pods-WhereRU/Pods-WhereRU.release.xcconfig"; sourceTree = "<group>"; };
+		5933A6B5722BC78BAF42469B /* Pods-WhereRUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRUTests.release.xcconfig"; path = "Target Support Files/Pods-WhereRUTests/Pods-WhereRUTests.release.xcconfig"; sourceTree = "<group>"; };
+		962B6F746F28D3DDBAA87AD2 /* Pods-WhereRUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRUTests.debug.xcconfig"; path = "Target Support Files/Pods-WhereRUTests/Pods-WhereRUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99042EB919D37B1A7F92F77F /* Pods_WhereRUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AC69B6F728178FD47B117B0 /* Pods-WhereRU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU.debug.xcconfig"; path = "Target Support Files/Pods-WhereRU/Pods-WhereRU.debug.xcconfig"; sourceTree = "<group>"; };
+		AEDA2184A04B4D66D7750CCB /* Pods-WhereRU-WhereRUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU-WhereRUUITests.debug.xcconfig"; path = "Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B49E68F83F2E2728BE05B8BC /* Pods-WhereRU-WhereRUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU-WhereRUUITests.release.xcconfig"; path = "Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C6C12FC7EC4A1E73A0813E3B /* Pods_WhereRU_WhereRUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRU_WhereRUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7D31A0A28BF51DF00940AFE /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = WhereRU.app; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRU.app"; sourceTree = "<absolute>"; };
 		C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		C7D31A1628BF51E100940AFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7D31A1928BF51E100940AFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7D31A1B28BF51E100940AFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C7D31A2028BF51E100940AFE /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7D31A2028BF51E100940AFE /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUTests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUTests.xctest"; sourceTree = "<absolute>"; };
 		C7D31A2428BF51E100940AFE /* WhereRUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUTests.swift; sourceTree = "<group>"; };
-		C7D31A2A28BF51E100940AFE /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7D31A2A28BF51E100940AFE /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUUITests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUUITests.xctest"; sourceTree = "<absolute>"; };
 		C7D31A2E28BF51E100940AFE /* WhereRUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUUITests.swift; sourceTree = "<group>"; };
 		C7D31A3028BF51E100940AFE /* WhereRUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7D31A4528C0902200940AFE /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
@@ -74,6 +90,10 @@
 		C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceView.swift; sourceTree = "<group>"; };
+		C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewController.swift; sourceTree = "<group>"; };
+		C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewModel.swift; sourceTree = "<group>"; };
+		C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionTableViewController.swift; sourceTree = "<group>"; };
+		C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +102,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D31A4428C08D3100940AFE /* SnapKit in Frameworks */,
+				3F7D9C3122C1BF73FE4FA1BB /* Pods_WhereRU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35A8CBC31D72EA9BD4137C88 /* Pods_WhereRUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,30 +118,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC334B887D79CDB36C83D8B /* Pods_WhereRU_WhereRUUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FFDC7D5F752E05B57817D25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9AC69B6F728178FD47B117B0 /* Pods-WhereRU.debug.xcconfig */,
+				17309D3DBAB52C96DB445858 /* Pods-WhereRU.release.xcconfig */,
+				AEDA2184A04B4D66D7750CCB /* Pods-WhereRU-WhereRUUITests.debug.xcconfig */,
+				B49E68F83F2E2728BE05B8BC /* Pods-WhereRU-WhereRUUITests.release.xcconfig */,
+				962B6F746F28D3DDBAA87AD2 /* Pods-WhereRUTests.debug.xcconfig */,
+				5933A6B5722BC78BAF42469B /* Pods-WhereRUTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BACF1822737A948A23EF8A66 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0ED7796A6DC3D8ACD995237F /* Pods_WhereRU.framework */,
+				C6C12FC7EC4A1E73A0813E3B /* Pods_WhereRU_WhereRUUITests.framework */,
+				99042EB919D37B1A7F92F77F /* Pods_WhereRUTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C7D31A0128BF51DF00940AFE = {
 			isa = PBXGroup;
 			children = (
 				C7D31A0C28BF51DF00940AFE /* WhereRU */,
 				C7D31A2328BF51E100940AFE /* WhereRUTests */,
 				C7D31A2D28BF51E100940AFE /* WhereRUUITests */,
-				C7D31A0B28BF51DF00940AFE /* Products */,
+				2FFDC7D5F752E05B57817D25 /* Pods */,
+				BACF1822737A948A23EF8A66 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		C7D31A0B28BF51DF00940AFE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C7D31A0A28BF51DF00940AFE /* WhereRU.app */,
-				C7D31A2028BF51E100940AFE /* WhereRUTests.xctest */,
-				C7D31A2A28BF51E100940AFE /* WhereRUUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C7D31A0C28BF51DF00940AFE /* WhereRU */ = {
@@ -183,6 +221,8 @@
 				C7D31A4E28C096BF00940AFE /* RoomsViewController.swift */,
 				C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */,
 				C7D31A5028C096D100940AFE /* SettingViewController.swift */,
+				C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */,
+				C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D31A5628C1CE2C00940AFE /* RoomsViewModel.swift */,
+				C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */,
+				C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -260,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7D31A3428BF51E100940AFE /* Build configuration list for PBXNativeTarget "WhereRU" */;
 			buildPhases = (
+				2151190649EDD87AAF0F1CCA /* [CP] Check Pods Manifest.lock */,
 				C7D31A0628BF51DF00940AFE /* Sources */,
 				C7D31A0728BF51DF00940AFE /* Frameworks */,
 				C7D31A0828BF51DF00940AFE /* Resources */,
+				76B9194DB40FA3575795C4F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -280,6 +324,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7D31A3728BF51E100940AFE /* Build configuration list for PBXNativeTarget "WhereRUTests" */;
 			buildPhases = (
+				BA66B83BDE63DE6F1250CBF2 /* [CP] Check Pods Manifest.lock */,
 				C7D31A1C28BF51E100940AFE /* Sources */,
 				C7D31A1D28BF51E100940AFE /* Frameworks */,
 				C7D31A1E28BF51E100940AFE /* Resources */,
@@ -298,9 +343,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7D31A3A28BF51E100940AFE /* Build configuration list for PBXNativeTarget "WhereRUUITests" */;
 			buildPhases = (
+				D6E65968729A112C50DAABB8 /* [CP] Check Pods Manifest.lock */,
 				C7D31A2628BF51E100940AFE /* Sources */,
 				C7D31A2728BF51E100940AFE /* Frameworks */,
 				C7D31A2828BF51E100940AFE /* Resources */,
+				F104CA807B3E378338B63E30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -347,7 +394,7 @@
 			packageReferences = (
 				C7D31A4228C08D3100940AFE /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
-			productRefGroup = C7D31A0B28BF51DF00940AFE /* Products */;
+			productRefGroup = C7D31A0128BF51DF00940AFE;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -384,12 +431,116 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2151190649EDD87AAF0F1CCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhereRU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76B9194DB40FA3575795C4F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhereRU/Pods-WhereRU-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhereRU/Pods-WhereRU-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhereRU/Pods-WhereRU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA66B83BDE63DE6F1250CBF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhereRUTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6E65968729A112C50DAABB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WhereRU-WhereRUUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F104CA807B3E378338B63E30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C7D31A0628BF51DF00940AFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C7D31A5728C1CE2C00940AFE /* RoomsViewModel.swift in Sources */,
+				C7D31A6A28C49A5A00940AFE /* LoactionTableViewController.swift in Sources */,
 				C7D31A5328C099CC00940AFE /* RoomsView.swift in Sources */,
 				C7D31A5528C099F600940AFE /* SettingView.swift in Sources */,
 				C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */,
@@ -400,11 +551,14 @@
 				C7D31A5128C096D100940AFE /* SettingViewController.swift in Sources */,
 				C7D31A4F28C096BF00940AFE /* RoomsViewController.swift in Sources */,
 				C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */,
+				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
 				C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */,
 				C7D31A4928C090CD00940AFE /* TabBarViewController.swift in Sources */,
 				C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */,
 				C7D31A4D28C0911700940AFE /* BaseViewController.swift in Sources */,
 				C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */,
+				C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */,
+				C7D31A6C28C4A19E00940AFE /* LocationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +722,7 @@
 		};
 		C7D31A3528BF51E100940AFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AC69B6F728178FD47B117B0 /* Pods-WhereRU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -595,6 +750,7 @@
 		};
 		C7D31A3628BF51E100940AFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17309D3DBAB52C96DB445858 /* Pods-WhereRU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -622,6 +778,7 @@
 		};
 		C7D31A3828BF51E100940AFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 962B6F746F28D3DDBAA87AD2 /* Pods-WhereRUTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -642,6 +799,7 @@
 		};
 		C7D31A3928BF51E100940AFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5933A6B5722BC78BAF42469B /* Pods-WhereRUTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -662,6 +820,7 @@
 		};
 		C7D31A3B28BF51E100940AFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEDA2184A04B4D66D7750CCB /* Pods-WhereRU-WhereRUUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,6 +839,7 @@
 		};
 		C7D31A3C28BF51E100940AFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B49E68F83F2E2728BE05B8BC /* Pods-WhereRU-WhereRUUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

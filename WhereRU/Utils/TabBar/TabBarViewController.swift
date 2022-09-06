@@ -15,7 +15,7 @@ class TabBarViewController: UITabBarController {
         let friendsViewController = FriendsViewController()
         let roomsViewController = RoomsViewController()
         let settingViewController = SettingViewController()
-        
+                
         let createButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressCreateButton))
         
         friendsViewController.navigationItem.title = "친구 목록"
@@ -39,7 +39,8 @@ class TabBarViewController: UITabBarController {
     
     @objc func pressCreateButton() {
         let createRoomVC = CreateRoomViewController()
-        createRoomVC.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        present(createRoomVC, animated: true)
+        let navController = UINavigationController(rootViewController: createRoomVC)
+        navController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        present(navController, animated: true)
     }
 }

@@ -20,6 +20,15 @@ class CreateRoomViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
+        createRoomView.placeInputLabel.isUserInteractionEnabled = true
+        createRoomView.placeInputLabel.addGestureRecognizer(tap)
+    }
+    
+    @objc func pressFindPlaceButton() {
+        let findPlaceVC = FindPlaceViewController()
+        navigationController?.pushViewController(findPlaceVC, animated: true)
     }
 
 }
