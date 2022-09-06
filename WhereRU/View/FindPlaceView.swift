@@ -6,16 +6,26 @@
 //
 
 import UIKit
-import NMapsMap
+import GoogleMaps
+import CoreLocation
 
 class FindPlaceView: UIView {
     
-    let mapView : NMFMapView = {
-        let mapView = NMFMapView()
-//        mapView.showLocationButton = true
+    let locationManager = CLLocationManager()
+    
+    lazy var mapView : GMSMapView = {
+        let latitude = locationManager.location?.coordinate.latitude ?? 0.0
+        let longitude = locationManager.location?.coordinate.longitude ?? 0.0
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: 17.0)
+        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.settings.myLocationButton = true
+        mapView.settings.scrollGestures = true
+        mapView.settings.zoomGestures = true
+        mapView.isMyLocationEnabled = true
         mapView.translatesAutoresizingMaskIntoConstraints = false
         return mapView
     }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
