@@ -6,8 +6,9 @@
 //
 
 import UIKit
-import NMapsMap
 import CoreLocation
+import GoogleMaps
+import GooglePlaces
 
 class FindPlaceViewController: UIViewController {
     
@@ -24,36 +25,12 @@ class FindPlaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         
-        
-        let locationSearchTable = LoactionTableViewController()
-        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
-        resultSearchController?.searchResultsUpdater = locationSearchTable
-        
-        let searchBar = resultSearchController?.searchBar
-        searchBar?.sizeToFit()
-        searchBar?.placeholder = "장소 검색"
-        navigationItem.searchController = resultSearchController // 서치바 생성
-        
-        definesPresentationContext = true
-        
-        locationSearchTable.mapView = findPlaceView.mapView
-        moveCurrentLocation()
-        addCurrentMarker()
-    }
-    
-    func moveCurrentLocation() {
-        guard let latitude = locationManager.location?.coordinate.latitude else {return}
-        guard let longitude = locationManager.location?.coordinate.longitude else {return}
-        let currentLocation = NMFCameraUpdate(scrollTo: NMGLatLng(lat: latitude, lng: longitude))
-        currentLocation.animation = .easeIn
-        findPlaceView.mapView.moveCamera(currentLocation)
-    }
-    
-    func addCurrentMarker() {
-        
+        let locationSearchTable = GMSAutocompleteViewController()
+        locationSearchTable.delegate = self
+        locationSearchTable.modalPresentationStyle = .fullScreen
+        present(locationSearchTable, animated: true)
     }
     
 }
@@ -117,9 +94,24 @@ extension FindPlaceViewController {
     }
 }
 
-extension FindPlaceViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+//        print("Place name: \(String(describing: place.name))") //셀탭한 글씨출력
+//        print(place.coordinate)
+        let zoomCamera = GMSCameraUpdate.zoomIn()
+        findPlaceView.mapView.animate(with: zoomCamera)
+        let newPlace = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        let newCamera = GMSCameraUpdate.setTarget(newPlace)
+        findPlaceView.mapView.moveCamera(newCamera)
+        dismiss(animated: true)
     }
     
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        print("bye")
+        dismiss(animated: true)
+    }
 }

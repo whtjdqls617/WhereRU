@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import NMapsMap
+import GoogleMaps
 
 class LoactionTableViewController: UITableViewController {
     
     let findPlaceView = FindPlaceView()
     
 //    var matchingItems: [MKMapItem] = []
-    var mapView: NMFMapView?
+    var mapView : GMSMapView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,20 @@ extension LoactionTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let mapView = mapView,
               let searchBarText = searchController.searchBar.text else { return }
-        
+        // 여기서 검색 결과 받아옴
+        /*
+         let request = MKLocalSearchRequest()
+             request.naturalLanguageQuery = searchBarText
+             request.region = mapView.region
+             let search = MKLocalSearch(request: request)
+             search.startWithCompletionHandler { response, _ in
+                 guard let response = response else {
+                     return
+                 }
+                 self.matchingItems = response.mapItems
+                 self.tableView.reloadData()
+             }
+         */
     }
 }
 

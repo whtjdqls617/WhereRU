@@ -1,16 +1,46 @@
 PODS:
-  - NMapsMap (3.16.0)
+  - Google-Maps-iOS-Utils (4.1.0):
+    - Google-Maps-iOS-Utils/Clustering (= 4.1.0)
+    - Google-Maps-iOS-Utils/Geometry (= 4.1.0)
+    - Google-Maps-iOS-Utils/GeometryUtils (= 4.1.0)
+    - Google-Maps-iOS-Utils/Heatmap (= 4.1.0)
+    - Google-Maps-iOS-Utils/QuadTree (= 4.1.0)
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Clustering (4.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Geometry (4.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/GeometryUtils (4.1.0):
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/Heatmap (4.1.0):
+    - Google-Maps-iOS-Utils/QuadTree
+    - GoogleMaps
+  - Google-Maps-iOS-Utils/QuadTree (4.1.0):
+    - GoogleMaps
+  - GoogleMaps (7.1.0):
+    - GoogleMaps/Maps (= 7.1.0)
+  - GoogleMaps/Base (7.1.0)
+  - GoogleMaps/Maps (7.1.0):
+    - GoogleMaps/Base
+  - GooglePlaces (7.1.0)
 
 DEPENDENCIES:
-  - NMapsMap
+  - Google-Maps-iOS-Utils
+  - GoogleMaps
+  - GooglePlaces
 
 SPEC REPOS:
   trunk:
-    - NMapsMap
+    - Google-Maps-iOS-Utils
+    - GoogleMaps
+    - GooglePlaces
 
 SPEC CHECKSUMS:
-  NMapsMap: a2593320fca2bb09e521c05b4dffee4da42e96ed
+  Google-Maps-iOS-Utils: 3343332b18dfd5be8f1f44edd7d481ace3da4d9a
+  GoogleMaps: bc56ffb0324e345a2d91bac1a64a920f9c8f1b20
+  GooglePlaces: 187946335ec3dc624de71c0a9ddcc712f19b0ee1
 
-PODFILE CHECKSUM: 26d87e57bda4b3e14e37eae00f658c2221992b90
+PODFILE CHECKSUM: 528ab07f2e1a50ce645ddd94827717309a4f8ac2
 
 COCOAPODS: 1.11.3
