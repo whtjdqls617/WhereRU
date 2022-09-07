@@ -18,8 +18,13 @@ class FindPlaceViewController: UIViewController {
     
     var resultSearchController : UISearchController?
     
+    let locationSearchTable = GMSAutocompleteViewController()
+    
     override func loadView() {
         self.view = findPlaceView
+        
+        let searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(pressSearchButton))
+        navigationItem.rightBarButtonItem = searchButton
     }
     
     override func viewDidLoad() {
@@ -27,9 +32,11 @@ class FindPlaceViewController: UIViewController {
         
         locationManager.requestWhenInUseAuthorization()
         
-        let locationSearchTable = GMSAutocompleteViewController()
         locationSearchTable.delegate = self
         locationSearchTable.modalPresentationStyle = .fullScreen
+    }
+    
+    @objc func pressSearchButton() {
         present(locationSearchTable, animated: true)
     }
     
@@ -98,11 +105,18 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
 //        print("Place name: \(String(describing: place.name))") //셀탭한 글씨출력
 //        print(place.coordinate)
+        findPlaceView.mapView.clear()
         let zoomCamera = GMSCameraUpdate.zoomIn()
         findPlaceView.mapView.animate(with: zoomCamera)
         let newPlace = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        
+        let marker = GMSMarker(position: newPlace)
+        marker.icon = UIImage(named: "custom_pin.png")
+        marker.map = findPlaceView.mapView
+        
         let newCamera = GMSCameraUpdate.setTarget(newPlace)
         findPlaceView.mapView.moveCamera(newCamera)
+        
         dismiss(animated: true)
     }
     
@@ -113,5 +127,12 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         print("bye")
         dismiss(animated: true)
+    }
+}
+
+extension FindPlaceViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        print(marker)
+        return true
     }
 }
