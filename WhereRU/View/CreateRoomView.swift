@@ -24,15 +24,16 @@ class CreateRoomView: UIView {
     
     let placeLabel : UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "장소"
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let placeInputLabel : UILabel = {
         let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "선택"
+        label.textColor = .systemBlue
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -54,6 +55,7 @@ class CreateRoomView: UIView {
     let moneyInputLabel : UILabel = {
         let label = UILabel()
         label.text = "입력"
+        label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
