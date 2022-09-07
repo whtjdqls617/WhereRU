@@ -30,8 +30,6 @@ class TabBarViewController: UITabBarController {
         let naviRoomsController = UINavigationController(rootViewController: roomsViewController)
         let naviSettingController = UINavigationController(rootViewController: settingViewController)
         
-//        naviFriendsController.isNavigationBarHidden = true
-//        naviRoomsController.isNavigationBarHidden = true
         naviSettingController.isNavigationBarHidden = true
         
         setViewControllers([naviFriendsController, naviRoomsController, naviSettingController], animated: false)
