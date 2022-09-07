@@ -8,9 +8,7 @@
 import UIKit
 
 class CreateRoomViewController: BaseViewController {
-    
-    static let identifier : String = "createRoomViewController"
-    
+        
     private let createRoomView = CreateRoomView()
 
     override func loadView() {
@@ -21,17 +19,28 @@ class CreateRoomViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
+        let tapPlace = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
         createRoomView.placeInputLabel.isUserInteractionEnabled = true
-        createRoomView.placeInputLabel.addGestureRecognizer(tap)
+        createRoomView.placeInputLabel.addGestureRecognizer(tapPlace)
         
-//        createRoomView.placeInputLabel.dele
+        let tapMoney = UITapGestureRecognizer(target: self, action: #selector(pressCreateButton))
+        createRoomView.createButton.isUserInteractionEnabled = true
+        createRoomView.createButton.addGestureRecognizer(tapMoney)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @objc func pressFindPlaceButton() {
         let findPlaceVC = FindPlaceViewController()
         findPlaceVC.delegate = self
         navigationController?.pushViewController(findPlaceVC, animated: true)
+    }
+    
+    @objc func pressCreateButton() {
+        dismiss(animated: true)
     }
 }
 

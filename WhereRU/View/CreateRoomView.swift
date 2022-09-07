@@ -52,12 +52,12 @@ class CreateRoomView: UIView {
         return label
     }()
     
-    let moneyInputLabel : UILabel = {
-        let label = UILabel()
-        label.text = "입력"
-        label.textColor = .systemBlue
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let moneyInputTextField : UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "금액을 입력해 주세요."
+        textField.keyboardType = .numberPad
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }()
     
     let moneyStackView : UIStackView = {
@@ -66,6 +66,14 @@ class CreateRoomView: UIView {
         stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
+    }()
+    
+    let createButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.setTitle("생성", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -84,7 +92,7 @@ class CreateRoomView: UIView {
             placeStackView.addArrangedSubview($0)
         }
         
-        [moneyLabel, moneyInputLabel].forEach {
+        [moneyLabel, moneyInputTextField].forEach {
             moneyStackView.addArrangedSubview($0)
         }
         
@@ -92,7 +100,7 @@ class CreateRoomView: UIView {
         self.addSubview(friendsCollecionView)
         self.addSubview(placeStackView)
         self.addSubview(moneyStackView)
-        
+        self.addSubview(createButton)
         
     }
     
@@ -114,7 +122,12 @@ class CreateRoomView: UIView {
             
             moneyStackView.topAnchor.constraint(equalTo: placeStackView.bottomAnchor, constant: 20),
             moneyStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            moneyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20)
+            moneyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20),
+            
+            createButton.topAnchor.constraint(equalTo: moneyStackView.bottomAnchor, constant: 250),
+            createButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            createButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            createButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 
