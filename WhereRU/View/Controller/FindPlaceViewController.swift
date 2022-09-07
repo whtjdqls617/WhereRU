@@ -10,6 +10,10 @@ import CoreLocation
 import GoogleMaps
 import GooglePlaces
 
+protocol SelectLocationDelegate {
+    func updatePlaceLabel(_ destination : String?)
+}
+
 class FindPlaceViewController: UIViewController {
     
     let findPlaceView = FindPlaceView()
@@ -19,6 +23,10 @@ class FindPlaceViewController: UIViewController {
     var resultSearchController : UISearchController?
     
     let locationSearchTable = GMSAutocompleteViewController()
+    
+    var currentLocation : CLLocationCoordinate2D?
+    
+    var delegate : SelectLocationDelegate?
     
     override func loadView() {
         self.view = findPlaceView
@@ -31,6 +39,8 @@ class FindPlaceViewController: UIViewController {
         super.viewDidLoad()
         
         locationManager.requestWhenInUseAuthorization()
+        
+        currentLocation = CLLocationCoordinate2D(latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.longitude ?? 0.0)
         
         locationSearchTable.delegate = self
         locationSearchTable.modalPresentationStyle = .fullScreen
@@ -109,6 +119,7 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
         let zoomCamera = GMSCameraUpdate.zoomIn()
         findPlaceView.mapView.animate(with: zoomCamera)
         let newPlace = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        print(newPlace.distance(from: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)))
         
         let marker = GMSMarker(position: newPlace)
         marker.icon = UIImage(named: "custom_pin.png")
@@ -117,6 +128,7 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
         let newCamera = GMSCameraUpdate.setTarget(newPlace)
         findPlaceView.mapView.moveCamera(newCamera)
         
+        delegate?.updatePlaceLabel(place.name)
         dismiss(animated: true)
     }
     
@@ -127,12 +139,5 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         print("bye")
         dismiss(animated: true)
-    }
-}
-
-extension FindPlaceViewController: GMSMapViewDelegate {
-    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        print(marker)
-        return true
     }
 }

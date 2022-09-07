@@ -10,6 +10,7 @@
 		61C0B93318CC70D26BF7E9CB /* Pods_WhereRU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6B7F511E2D3B99D1995C868 /* Pods_WhereRU.framework */; };
 		7F507818DB24A3EC50DE2CC3 /* Pods_WhereRU_WhereRUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2A5302DA27453AAF997EDD /* Pods_WhereRU_WhereRUUITests.framework */; };
 		C700801E28C71E0F00FC7709 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C700801D28C71E0F00FC7709 /* Alamofire */; };
+		C700870F28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */; };
 		C7D31A0E28BF51DF00940AFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */; };
 		C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */; };
 		C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */; };
@@ -34,7 +35,6 @@
 		C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */; };
 		C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */; };
 		C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */; };
-		C7D31A6A28C49A5A00940AFE /* LoactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */; };
 		C7D31A6C28C4A19E00940AFE /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */; };
 		D55C4EBBBF8CD10219EBF74F /* Pods_WhereRUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39ABC214F043CAC334D2F7EE /* Pods_WhereRUTests.framework */; };
 /* End PBXBuildFile section */
@@ -64,9 +64,10 @@
 		B6B7F511E2D3B99D1995C868 /* Pods_WhereRU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC9837A7322B1EB0CF92F4A1 /* Pods-WhereRU-WhereRUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU-WhereRUUITests.debug.xcconfig"; path = "Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C18527C88A349C2CD7A61AF2 /* Pods-WhereRUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRUTests.debug.xcconfig"; path = "Target Support Files/Pods-WhereRUTests/Pods-WhereRUTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C700817028C743C800FC7709 /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = WhereRU.app; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRU.app"; sourceTree = "<absolute>"; };
-		C70086EA28C7959D00FC7709 /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUTests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUTests.xctest"; sourceTree = "<absolute>"; };
-		C70086EB28C7959D00FC7709 /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUUITests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUUITests.xctest"; sourceTree = "<absolute>"; };
+		C700870A28C7B19A00FC7709 /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereRU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C700870B28C7B19A00FC7709 /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C700870C28C7B19A00FC7709 /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D + extension.swift"; sourceTree = "<group>"; };
 		C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceView.swift; sourceTree = "<group>"; };
 		C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewController.swift; sourceTree = "<group>"; };
 		C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewModel.swift; sourceTree = "<group>"; };
-		C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoactionTableViewController.swift; sourceTree = "<group>"; };
 		C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		CF2A5302DA27453AAF997EDD /* Pods_WhereRU_WhereRUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRU_WhereRUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D97E6D26566FD4ADB91A3446 /* Pods-WhereRU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU.debug.xcconfig"; path = "Target Support Files/Pods-WhereRU/Pods-WhereRU.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C700870D28C85CF800FC7709 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C7D31A0128BF51DF00940AFE = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +143,9 @@
 				C7D31A2D28BF51E100940AFE /* WhereRUUITests */,
 				D41B59487FDDBD18F3E0D14C /* Pods */,
 				EF19E0CF2766DE3600ED82E1 /* Frameworks */,
+				C700870A28C7B19A00FC7709 /* WhereRU.app */,
+				C700870B28C7B19A00FC7709 /* WhereRUTests.xctest */,
+				C700870C28C7B19A00FC7709 /* WhereRUUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,7 +211,6 @@
 				C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */,
 				C7D31A5028C096D100940AFE /* SettingViewController.swift */,
 				C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */,
-				C7D31A6928C49A5A00940AFE /* LoactionTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -226,6 +236,7 @@
 		C7D31A4728C090A400940AFE /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C700870D28C85CF800FC7709 /* Extensions */,
 				C7D31A4B28C090E200940AFE /* BaseViewController */,
 				C7D31A4A28C090D200940AFE /* TabBar */,
 			);
@@ -283,7 +294,6 @@
 				C18527C88A349C2CD7A61AF2 /* Pods-WhereRUTests.debug.xcconfig */,
 				91B393B7336237CACA544C22 /* Pods-WhereRUTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -320,7 +330,7 @@
 				C700801D28C71E0F00FC7709 /* Alamofire */,
 			);
 			productName = WhereRU;
-			productReference = C700817028C743C800FC7709 /* WhereRU.app */;
+			productReference = C700870A28C7B19A00FC7709 /* WhereRU.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C7D31A1F28BF51E100940AFE /* WhereRUTests */ = {
@@ -339,7 +349,7 @@
 			);
 			name = WhereRUTests;
 			productName = WhereRUTests;
-			productReference = C70086EA28C7959D00FC7709 /* WhereRUTests.xctest */;
+			productReference = C700870B28C7B19A00FC7709 /* WhereRUTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C7D31A2928BF51E100940AFE /* WhereRUUITests */ = {
@@ -359,7 +369,7 @@
 			);
 			name = WhereRUUITests;
 			productName = WhereRUUITests;
-			productReference = C70086EB28C7959D00FC7709 /* WhereRUUITests.xctest */;
+			productReference = C700870C28C7B19A00FC7709 /* WhereRUUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -544,7 +554,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D31A5728C1CE2C00940AFE /* RoomsViewModel.swift in Sources */,
-				C7D31A6A28C49A5A00940AFE /* LoactionTableViewController.swift in Sources */,
 				C7D31A5328C099CC00940AFE /* RoomsView.swift in Sources */,
 				C7D31A5528C099F600940AFE /* SettingView.swift in Sources */,
 				C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */,
@@ -558,6 +567,7 @@
 				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
 				C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */,
 				C7D31A4928C090CD00940AFE /* TabBarViewController.swift in Sources */,
+				C700870F28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift in Sources */,
 				C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */,
 				C7D31A4D28C0911700940AFE /* BaseViewController.swift in Sources */,
 				C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */,

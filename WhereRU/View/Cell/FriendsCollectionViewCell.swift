@@ -19,12 +19,14 @@ class FriendsCollectionViewCell: UICollectionViewCell {
     
     let profileImageView : UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     let nameLabel : UILabel = {
         let label = UILabel()
+        label.text = "test"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

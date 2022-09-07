@@ -24,11 +24,25 @@ class CreateRoomViewController: BaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
         createRoomView.placeInputLabel.isUserInteractionEnabled = true
         createRoomView.placeInputLabel.addGestureRecognizer(tap)
+        
+//        createRoomView.placeInputLabel.dele
     }
     
     @objc func pressFindPlaceButton() {
         let findPlaceVC = FindPlaceViewController()
+        findPlaceVC.delegate = self
         navigationController?.pushViewController(findPlaceVC, animated: true)
     }
+}
 
+extension CreateRoomViewController: SelectLocationDelegate {
+    func updatePlaceLabel(_ destination: String?) {
+        if let destination = destination {
+            print(destination)
+            createRoomView.placeInputLabel.text = destination
+        } else {
+            createRoomView.placeInputLabel.text = "선택"
+            createRoomView.placeInputLabel.textColor = .systemBlue
+        }
+    }
 }
