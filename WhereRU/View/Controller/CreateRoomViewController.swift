@@ -18,7 +18,7 @@ class CreateRoomViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         let tapPlace = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
         createRoomView.placeInputLabel.isUserInteractionEnabled = true
         createRoomView.placeInputLabel.addGestureRecognizer(tapPlace)
@@ -26,6 +26,14 @@ class CreateRoomViewController: BaseViewController {
         let tapMoney = UITapGestureRecognizer(target: self, action: #selector(pressCreateButton))
         createRoomView.createButton.isUserInteractionEnabled = true
         createRoomView.createButton.addGestureRecognizer(tapMoney)
+        
+        let tapCreate = UITapGestureRecognizer(target: self, action: #selector(pressCreateButton))
+        createRoomView.createButton.isUserInteractionEnabled = true
+        createRoomView.createButton.addGestureRecognizer(tapCreate)
+        
+        let tapCancle = UITapGestureRecognizer(target: self, action: #selector(pressCancleButton))
+        createRoomView.cancleButton.isUserInteractionEnabled = true
+        createRoomView.cancleButton.addGestureRecognizer(tapCancle)
         
     }
     
@@ -40,6 +48,10 @@ class CreateRoomViewController: BaseViewController {
     }
     
     @objc func pressCreateButton() {
+        dismiss(animated: true)
+    }
+    
+    @objc func pressCancleButton() {
         dismiss(animated: true)
     }
 }
