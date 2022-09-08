@@ -76,6 +76,22 @@ class CreateRoomView: UIView {
         return button
     }()
     
+    let cancleButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemGray
+        button.setTitle("취소", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let buttonStackView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -96,11 +112,15 @@ class CreateRoomView: UIView {
             moneyStackView.addArrangedSubview($0)
         }
         
+        [cancleButton, createButton].forEach {
+            buttonStackView.addArrangedSubview($0)
+        }
+        
         self.addSubview(friendListLabel)
         self.addSubview(friendsCollecionView)
         self.addSubview(placeStackView)
         self.addSubview(moneyStackView)
-        self.addSubview(createButton)
+        self.addSubview(buttonStackView)
         
     }
     
@@ -124,10 +144,10 @@ class CreateRoomView: UIView {
             moneyStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             moneyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20),
             
-            createButton.topAnchor.constraint(equalTo: moneyStackView.bottomAnchor, constant: 250),
-            createButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            createButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            createButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            buttonStackView.topAnchor.constraint(equalTo: moneyStackView.bottomAnchor, constant: 50),
+            buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            buttonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 
