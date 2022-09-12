@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:d499ddf7eefe08f8024b855b4780ad0440e9b64bb1ae9b517c1e50273f22c4a3
-size 144
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'GoogleMapsSwiftDemos' do
+    platform :ios, '13.0'
+    pod 'GoogleMaps', '= 7.1.0'
+end

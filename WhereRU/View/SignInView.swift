@@ -26,6 +26,7 @@ class SignInView: UIView {
     let signInButton : UIButton = {
         let button = UIButton()
         button.setTitle("로그인", for: .normal)
+        button.backgroundColor = .systemBlue
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -33,6 +34,7 @@ class SignInView: UIView {
     let signUpButton : UIButton = {
         let button = UIButton()
         button.setTitle("회원가입", for: .normal)
+        button.backgroundColor = .systemGray
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

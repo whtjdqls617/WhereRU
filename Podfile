@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f4dc942505d356897eed5dd396cbdaee75f6b1ca280f425d64f2ee430f662163
-size 440
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'WhereRU' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for WhereRU
+
+post_install do |installer|
+        installer.pods_project.targets.each do |target|
+              target.build_configurations.each do |config|
+                    config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
+              end
+    end
+    end
+
+	# Google map
+	pod 'GoogleMaps'
+	pod 'GooglePlaces'
+
+	# Firebase
+	pod 'FirebaseAuth'
+	pod 'FirebaseFirestore'
+	pod 'FirebaseStorage'
+
+  target 'WhereRUTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'WhereRUUITests' do
+    # Pods for testing
+  end
+
+end

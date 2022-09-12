@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4c83b5d71c5e22105ccae4bb0d9703206002b96e6f00420ddbf813f968b09160
-size 143
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'GooglePlacesDemos' do
+    platform :ios, '13.0'
+    pod 'GooglePlaces', '= 7.1.0'
+end
