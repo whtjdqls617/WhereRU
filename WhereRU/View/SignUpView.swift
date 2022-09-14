@@ -16,7 +16,7 @@ class SignUpView: UIView {
         return label
     }()
 
-    let eamilTextField : UITextField = {
+    let emailTextField : UITextField = {
        let textfield = UITextField()
         textfield.placeholder = "이메일을 입력해주세요."
         textfield.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +26,7 @@ class SignUpView: UIView {
     let emailCheckButton : UIButton = {
         let button = UIButton()
         button.setTitle("중복 확인", for: .normal)
+        button.backgroundColor = .systemGray
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -48,6 +49,7 @@ class SignUpView: UIView {
     let nickNameCheckButton : UIButton = {
         let button = UIButton()
         button.setTitle("중복 확인", for: .normal)
+        button.backgroundColor = .systemGray
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -70,6 +72,7 @@ class SignUpView: UIView {
     let finishButton : UIButton = {
         let button = UIButton()
         button.setTitle("가입하기", for: .normal)
+        button.backgroundColor = .systemBlue
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -85,7 +88,7 @@ class SignUpView: UIView {
     }
     
     private func setupView() {
-        [eamilTextField, emailCheckButton].forEach {
+        [emailTextField, emailCheckButton].forEach {
             emailStackView.addArrangedSubview($0)
         }
         
