@@ -15,6 +15,7 @@
 		C7586E2328C9F3B9003B6639 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2228C9F3B9003B6639 /* SignInViewController.swift */; };
 		C7586E2528C9F3C3003B6639 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */; };
 		C7586E8A28CDC566003B6639 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7586E8928CDC566003B6639 /* GoogleService-Info.plist */; };
+		C7CFA81628D1A687008AA02C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CFA81528D1A687008AA02C /* FirebaseManager.swift */; };
 		C7D31A0E28BF51DF00940AFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */; };
 		C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */; };
 		C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */; };
@@ -72,10 +73,11 @@
 		C7586E2028C9F3A2003B6639 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C7586E2228C9F3B9003B6639 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		C7586E8628CDC4BA003B6639 /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = WhereRU.app; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRU.app"; sourceTree = "<absolute>"; };
 		C7586E8928CDC566003B6639 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C7586F5528CDC837003B6639 /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUTests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUTests.xctest"; sourceTree = "<absolute>"; };
-		C7586F5628CDC837003B6639 /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUUITests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUUITests.xctest"; sourceTree = "<absolute>"; };
+		C7CFA81228CF877A008AA02C /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereRU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CFA81328CF877A008AA02C /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CFA81428CF877A008AA02C /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CFA81528D1A687008AA02C /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,9 @@
 				C7D31A0C28BF51DF00940AFE /* WhereRU */,
 				C59EE6516DCBC5354D9BC204 /* Pods */,
 				53F317BC0EE97F085DB92F11 /* Frameworks */,
+				C7CFA81228CF877A008AA02C /* WhereRU.app */,
+				C7CFA81328CF877A008AA02C /* WhereRUTests.xctest */,
+				C7CFA81428CF877A008AA02C /* WhereRUUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				C7D31A5A28C1CE6300940AFE /* LocationManager.swift */,
+				C7CFA81528D1A687008AA02C /* FirebaseManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -318,7 +324,7 @@
 				C700801D28C71E0F00FC7709 /* Alamofire */,
 			);
 			productName = WhereRU;
-			productReference = C7586E8628CDC4BA003B6639 /* WhereRU.app */;
+			productReference = C7CFA81228CF877A008AA02C /* WhereRU.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C7D31A1F28BF51E100940AFE /* WhereRUTests */ = {
@@ -337,7 +343,7 @@
 			);
 			name = WhereRUTests;
 			productName = WhereRUTests;
-			productReference = C7586F5528CDC837003B6639 /* WhereRUTests.xctest */;
+			productReference = C7CFA81328CF877A008AA02C /* WhereRUTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C7D31A2928BF51E100940AFE /* WhereRUUITests */ = {
@@ -358,7 +364,7 @@
 			);
 			name = WhereRUUITests;
 			productName = WhereRUUITests;
-			productReference = C7586F5628CDC837003B6639 /* WhereRUUITests.xctest */;
+			productReference = C7CFA81428CF877A008AA02C /* WhereRUUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -594,6 +600,7 @@
 				C700870F28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift in Sources */,
 				C7586E1F28C9F395003B6639 /* SignInView.swift in Sources */,
 				C7586E2128C9F3A2003B6639 /* SignUpView.swift in Sources */,
+				C7CFA81628D1A687008AA02C /* FirebaseManager.swift in Sources */,
 				C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */,
 				C7586E2528C9F3C3003B6639 /* SignUpViewController.swift in Sources */,
 				C7D31A4D28C0911700940AFE /* BaseViewController.swift in Sources */,
