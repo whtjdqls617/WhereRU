@@ -37,7 +37,6 @@ class FindPlaceView: UIView {
     }
     
     private func setupView() {
-        self.backgroundColor = .white
         self.addSubview(mapView)
     }
     

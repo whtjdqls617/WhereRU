@@ -20,7 +20,6 @@ class RoomsView: UIView {
     }
     
     private func setupView() {
-        self.backgroundColor = .white
         
     }
     

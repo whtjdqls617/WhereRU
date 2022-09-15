@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 
 class FirebaseManager {
     
@@ -47,5 +48,37 @@ class FirebaseManager {
         let mail = email.components(separatedBy: "@")[1]
         let documentName = id + "_" + mail
         return documentName
+    }
+    
+    enum SearchStatus {
+        case success
+        case notSearch
+        case failure
+    }
+    
+    func getDocumentFromFirestore(_ email : String, completion: @escaping (SearchStatus, DocumentSnapshot?) -> Void) {
+        if email.contains("@") == false {
+            return
+        }
+        let docName = makeDocumentName(email)
+        let docRef = db.collection("Users").document(docName)
+        
+        docRef.getDocument { document, error in
+            if error != nil {
+                print("사용자가 존재하지 않습니다.")
+                completion(.failure, nil)
+            } else if let document = document, document.exists {
+                completion(.success, document)
+            } else {
+                completion(.notSearch, nil)
+            }
+        }
+    }
+    
+    func addFriendToFirestore(_ email : String, _ nickName : String) {
+        let currentUserEmail = Auth.auth().currentUser?.email ?? ""
+        
+        let docName = makeDocumentName(currentUserEmail)
+        db.collection("Users").document(docName).setData(["friends" : [email : nickName]], merge: true)
     }
 }
