@@ -14,7 +14,7 @@ protocol SelectLocationDelegate {
     func updatePlaceLabel(_ destination : String?)
 }
 
-class FindPlaceViewController: UIViewController {
+class FindPlaceViewController: BaseViewController {
     
     let findPlaceView = FindPlaceView()
     

@@ -15,6 +15,8 @@
 		C7586E2328C9F3B9003B6639 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2228C9F3B9003B6639 /* SignInViewController.swift */; };
 		C7586E2528C9F3C3003B6639 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */; };
 		C7586E8A28CDC566003B6639 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7586E8928CDC566003B6639 /* GoogleService-Info.plist */; };
+		C766997F28D30D10005C862C /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766997E28D30D10005C862C /* AddFriendViewController.swift */; };
+		C766998128D30D33005C862C /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766998028D30D33005C862C /* AddFriendView.swift */; };
 		C7CFA81628D1A687008AA02C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CFA81528D1A687008AA02C /* FirebaseManager.swift */; };
 		C7D31A0E28BF51DF00940AFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0D28BF51DF00940AFE /* AppDelegate.swift */; };
 		C7D31A1028BF51DF00940AFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A0F28BF51DF00940AFE /* SceneDelegate.swift */; };
@@ -74,6 +76,8 @@
 		C7586E2228C9F3B9003B6639 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C7586E8928CDC566003B6639 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C766997E28D30D10005C862C /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		C766998028D30D33005C862C /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		C7CFA81228CF877A008AA02C /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereRU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CFA81328CF877A008AA02C /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CFA81428CF877A008AA02C /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +211,7 @@
 				C7586E2028C9F3A2003B6639 /* SignUpView.swift */,
 				C7D31A4528C0902200940AFE /* FriendsView.swift */,
 				C7D31A5228C099CC00940AFE /* RoomsView.swift */,
+				C766998028D30D33005C862C /* AddFriendView.swift */,
 				C7D31A5C28C1D28900940AFE /* CreateRoomView.swift */,
 				C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */,
 				C7D31A5428C099F600940AFE /* SettingView.swift */,
@@ -223,6 +228,7 @@
 				C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */,
 				C7D31A1128BF51DF00940AFE /* FriendsViewController.swift */,
 				C7D31A4E28C096BF00940AFE /* RoomsViewController.swift */,
+				C766997E28D30D10005C862C /* AddFriendViewController.swift */,
 				C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */,
 				C7D31A5028C096D100940AFE /* SettingViewController.swift */,
 				C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */,
@@ -592,9 +598,11 @@
 				C7D31A5D28C1D28900940AFE /* CreateRoomView.swift in Sources */,
 				C7D31A6228C1D4F100940AFE /* FriendsCollectionViewCell.swift in Sources */,
 				C7D31A5128C096D100940AFE /* SettingViewController.swift in Sources */,
+				C766998128D30D33005C862C /* AddFriendView.swift in Sources */,
 				C7D31A4F28C096BF00940AFE /* RoomsViewController.swift in Sources */,
 				C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */,
 				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
+				C766997F28D30D10005C862C /* AddFriendViewController.swift in Sources */,
 				C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */,
 				C7D31A4928C090CD00940AFE /* TabBarViewController.swift in Sources */,
 				C700870F28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift in Sources */,
