@@ -9,6 +9,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import FirebaseCore
+import KakaoSDKCommon
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCEUB5jqkG7tReq-UQlHEVISgrE2M4JSY4")
         GMSPlacesClient.provideAPIKey("AIzaSyCEUB5jqkG7tReq-UQlHEVISgrE2M4JSY4")
+        KakaoSDK.initSDK(appKey: "925d2253c53a8493627b7be08cafcb5d")
         FirebaseApp.configure()
         
         return true
