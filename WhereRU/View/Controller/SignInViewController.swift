@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import KakaoSDKUser
 
 class SignInViewController: BaseViewController {
 
@@ -23,6 +24,8 @@ class SignInViewController: BaseViewController {
         signInView.signInButton.addTarget(self, action: #selector(pressSignInButton), for: .touchUpInside)
         
         signInView.signUpButton.addTarget(self, action: #selector(pressSignUpButton), for: .touchUpInside)
+        
+        signInView.kakaoSignInButton.addTarget(self, action: #selector(pressKakaoSignInButton), for: .touchUpInside)
     }
     
     @objc func pressSignInButton() {
@@ -40,6 +43,38 @@ class SignInViewController: BaseViewController {
                 self.present(alert, animated: false, completion: nil)
             }
             
+        }
+    }
+    
+    @objc func pressKakaoSignInButton() {
+//        if (UserApi.isKakaoTalkLoginAvailable()) {
+//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+//                if let error = error {
+//                    print(error)
+//                }
+//                else {
+//                    print("loginWithKakaoTalk() success.")
+//
+//                    //do something
+//                    _ = oauthToken
+//                    let accessToken = oauthToken?.accessToken
+//                    print(accessToken)
+//                }
+//            }
+//        }
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+           if let error = error {
+             print(error)
+           }
+           else {
+            print("loginWithKakaoAccount() success.")
+            let mainVC = TabBarViewController()
+            mainVC.modalPresentationStyle = .fullScreen
+            self.present(mainVC, animated: true)
+            
+            //do something
+            _ = oauthToken
+           }
         }
     }
     
