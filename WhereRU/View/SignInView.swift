@@ -31,6 +31,14 @@ class SignInView: UIView {
         return button
     }()
     
+    let kakaoSignInButton : UIButton = {
+        let button = UIButton()
+        button.setTitle("카카오톡으로 로그인", for: .normal)
+        button.backgroundColor = .systemYellow
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     let signUpButton : UIButton = {
         let button = UIButton()
         button.setTitle("회원가입", for: .normal)
@@ -53,6 +61,7 @@ class SignInView: UIView {
         self.addSubview(eamilTextField)
         self.addSubview(passwordTextField)
         self.addSubview(signInButton)
+        self.addSubview(kakaoSignInButton)
         self.addSubview(signUpButton)
     }
     
@@ -69,8 +78,11 @@ class SignInView: UIView {
             signInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 40),
             
+            kakaoSignInButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            kakaoSignInButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 40),
+            
             signUpButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            signUpButton.topAnchor.constraint(equalTo: signInButton.bottomAnchor, constant: 40)
+            signUpButton.topAnchor.constraint(equalTo: kakaoSignInButton.bottomAnchor, constant: 40)
         ])
     }
 
