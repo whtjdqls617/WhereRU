@@ -13,11 +13,12 @@ class FirebaseManager {
     
     let db = Firestore.firestore()
 
-    func uploadDataToFirestore(_ email : String, _ name : String) {
+    func uploadDataToFirestore(_ email : String, _ nickName : String) {
         let totalId = makeDocumentName(email)
         
-        db.collection("Users").document(totalId).setData(["email" : email, "name" : name]) { error in
+        db.collection("Users").document(totalId).setData(["email" : email, "nickName" : nickName]) { error in
             if let error = error {
+                print("여기?")
                 print(error.localizedDescription)
             } else {
                 print("Success!")

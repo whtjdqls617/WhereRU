@@ -46,22 +46,6 @@ class SignUpView: UIView {
         return textfield
     }()
     
-    let nickNameCheckButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("중복 확인", for: .normal)
-        button.backgroundColor = .systemGray
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    let nickNameStackView : UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    
     let passwordTextField : UITextField = {
        let textfield = UITextField()
         textfield.placeholder = "비밀번호를 입력해주세요."
@@ -92,13 +76,9 @@ class SignUpView: UIView {
             emailStackView.addArrangedSubview($0)
         }
         
-        [nickNameTextField, nickNameCheckButton].forEach {
-            nickNameStackView.addArrangedSubview($0)
-        }
-        
         self.addSubview(appLabel)
         self.addSubview(emailStackView)
-        self.addSubview(nickNameStackView)
+        self.addSubview(nickNameTextField)
         self.addSubview(passwordTextField)
         self.addSubview(finishButton)
     }
@@ -113,10 +93,10 @@ class SignUpView: UIView {
             emailStackView.topAnchor.constraint(equalTo: appLabel.bottomAnchor, constant: 50),
             emailStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            nickNameStackView.topAnchor.constraint(equalTo: emailStackView.bottomAnchor, constant: 30),
-            nickNameStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            nickNameTextField.topAnchor.constraint(equalTo: emailStackView.bottomAnchor, constant: 30),
+            nickNameTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            passwordTextField.topAnchor.constraint(equalTo: nickNameStackView.bottomAnchor, constant: 30),
+            passwordTextField.topAnchor.constraint(equalTo: nickNameTextField.bottomAnchor, constant: 30),
             passwordTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
             finishButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),

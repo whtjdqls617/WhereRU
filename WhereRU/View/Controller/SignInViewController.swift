@@ -10,8 +10,9 @@ import FirebaseAuth
 import KakaoSDKUser
 
 class SignInViewController: BaseViewController {
-
+    
     let signInView = SignInView()
+    let firebaseManager = FirebaseManager()
     
     override func loadView() {
         super.loadView()
@@ -20,7 +21,7 @@ class SignInViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         signInView.signInButton.addTarget(self, action: #selector(pressSignInButton), for: .touchUpInside)
         
         signInView.signUpButton.addTarget(self, action: #selector(pressSignUpButton), for: .touchUpInside)
@@ -47,34 +48,10 @@ class SignInViewController: BaseViewController {
     }
     
     @objc func pressKakaoSignInButton() {
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//                else {
-//                    print("loginWithKakaoTalk() success.")
-//
-//                    //do something
-//                    _ = oauthToken
-//                    let accessToken = oauthToken?.accessToken
-//                    print(accessToken)
-//                }
-//            }
-//        }
-        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-           if let error = error {
-             print(error)
-           }
-           else {
-            print("loginWithKakaoAccount() success.")
-            let mainVC = TabBarViewController()
-            mainVC.modalPresentationStyle = .fullScreen
-            self.present(mainVC, animated: true)
-            
-            //do something
-            _ = oauthToken
-           }
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            signInKakaoInApp()
+        } else {
+            signInKakaoInWeb()
         }
     }
     
@@ -82,5 +59,56 @@ class SignInViewController: BaseViewController {
         let signUpVC = SignUpViewController()
         signUpVC.modalPresentationStyle = .fullScreen
         present(signUpVC, animated: true)
+    }
+    
+    func signInKakaoInApp() {
+        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoTalk() success.")
+                
+                //do something
+                _ = oauthToken
+            }
+        }
+    }
+    
+    func signInKakaoInWeb() {
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                print("loginWithKakaoAccount() success.")
+                self.createUserInFirebase()
+                let mainVC = TabBarViewController()
+                mainVC.modalPresentationStyle = .fullScreen
+                self.present(mainVC, animated: true)
+                
+                //do something
+                _ = oauthToken
+            }
+            
+        }
+    }
+    
+    func createUserInFirebase() {
+        UserApi.shared.me { user, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                guard let email = user?.kakaoAccount?.email else {return}
+                guard let name = user?.kakaoAccount?.profile?.nickname else {return}
+                guard let password = user?.id else {return}
+                Auth.auth().createUser(withEmail: email, password: String(password)) { result, error in
+                    if result == nil {
+                        Auth.auth().signIn(withEmail: email, password: String(password))
+                    }
+                }
+                self.firebaseManager.uploadDataToFirestore(email, name)
+            }
+        }
     }
 }
