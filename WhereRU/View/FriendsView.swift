@@ -9,7 +9,12 @@ import UIKit
 
 class FriendsView: UIView {
 
-    // view 필요한 목록 작성
+    let friendTableView : UITableView = {
+        let tableView = UITableView()
+        tableView.register(FriendsTableViewCell.self, forCellReuseIdentifier: FriendsTableViewCell.identifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,11 +28,18 @@ class FriendsView: UIView {
     
     private func setupView() {
         
+        self.addSubview(friendTableView)
     }
     
     // MARK: AutoLayout
     
     private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            friendTableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            friendTableView.topAnchor.constraint(equalTo: self.topAnchor),
+            friendTableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            friendTableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
         
     }
 }

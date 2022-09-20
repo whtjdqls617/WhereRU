@@ -1,5 +1,5 @@
 //
-//  FriendsCollectionViewCell.swift
+//  FriendsTableViewCell.swift
 //  WhereRU
 //
 //  Created by 조성빈 on 2022/09/02.
@@ -7,15 +7,9 @@
 
 import UIKit
 
-class FriendsCollectionViewCell: UICollectionViewCell {
+class FriendsTableViewCell: UITableViewCell {
     
-    static let identifier: String = "friendsCollectionViewCell"
-    
-    let deleteButton : UIButton = {
-        let button = UIButton()
-        button.tintColor = .systemRed
-        return button
-    }()
+    static let identifier: String = "friendsTableViewCell"
     
     let profileImageView : UIImageView = {
         let imageView = UIImageView()
@@ -24,19 +18,19 @@ class FriendsCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    let nameLabel : UILabel = {
+    let nickNameLabel : UILabel = {
         let label = UILabel()
         label.text = "test"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
         setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -45,9 +39,8 @@ class FriendsCollectionViewCell: UICollectionViewCell {
     
     private func setupView() {
         
-        self.addSubview(deleteButton)
         self.addSubview(profileImageView)
-        self.addSubview(nameLabel)
+        self.addSubview(nickNameLabel)
         
         
     }
@@ -56,12 +49,11 @@ class FriendsCollectionViewCell: UICollectionViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            deleteButton.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10),
-            deleteButton.bottomAnchor.constraint(equalTo: profileImageView.topAnchor, constant: 10),
-            profileImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            nameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            nameLabel.topAnchor.constraint(equalTo: profileImageView.bottomAnchor, constant: 10)
+            profileImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            
+            nickNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            nickNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
         ])
     }
 }

@@ -54,7 +54,8 @@ extension AddFriendViewController: UITextFieldDelegate {
                 switch status {
                 case .success:
                     guard let data = data?.data() else {return}
-                    self?.addFriendView.nickNameLabel.text = data["name"] as? String
+                    print(data["friends"])
+                    self?.addFriendView.nickNameLabel.text = data["nickName"] as? String
                     self?.addFriendView.addButton.isHidden = false
                 case .notSearch:
                     self?.addFriendView.nickNameLabel.text = ""
