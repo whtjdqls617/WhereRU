@@ -11,9 +11,10 @@ import KakaoSDKUser
 
 class FriendsViewController: BaseViewController {
     
-//    var friendsList = Friends[]
+    var friendsList : FriendsList?
     
     let friendsView = FriendsView()
+    let friendsViewModel = FriendsViewModel()
 
     override func loadView() {
         super.loadView()
@@ -23,7 +24,18 @@ class FriendsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getFriendsListFromFirebase()
+        friendsView.friendTableView.dataSource = self
+        
+        friendsViewModel.kakaoManager.getFriendsListFromKakao { list in
+            if let list = list {
+                self.friendsList = list
+                print(self.friendsList)
+                DispatchQueue.main.async {
+                    self.friendsView.friendTableView.reloadData()
+                }
+            }
+        }
+//        getFriendsListFromFirebase()
 //        disconnectAccount()
     }
 
@@ -56,11 +68,13 @@ class FriendsViewController: BaseViewController {
 
 extension FriendsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        print(friendsList?.totalCount)
+        return friendsList?.totalCount ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FriendsTableViewCell.identifier, for: indexPath) as? FriendsTableViewCell else {return UITableViewCell()}
+        cell.nickNameLabel.text = friendsList?.elements[0].profileNickname
         return cell
     }
 }

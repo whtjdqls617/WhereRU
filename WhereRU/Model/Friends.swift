@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import KakaoSDKTalk
 
 struct FriendsList: Codable {
-    let elements: [Friend]
+    let elements: [KakaoSDKTalk.Friend]
     let totalCount: Int
 
     enum CodingKeys: String, CodingKey {

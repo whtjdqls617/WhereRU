@@ -39,6 +39,8 @@
 		C7586E2528C9F3C3003B6639 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */; };
 		C7586E8A28CDC566003B6639 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7586E8928CDC566003B6639 /* GoogleService-Info.plist */; };
 		C75D194128DA09B10062732F /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D194028DA09B10062732F /* Friends.swift */; };
+		C75D194328DA0A890062732F /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D194228DA0A890062732F /* FriendsViewModel.swift */; };
+		C75D194528DA0ACD0062732F /* KakaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D194428DA0ACD0062732F /* KakaoManager.swift */; };
 		C766997F28D30D10005C862C /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766997E28D30D10005C862C /* AddFriendViewController.swift */; };
 		C766998128D30D33005C862C /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766998028D30D33005C862C /* AddFriendView.swift */; };
 		C7CFA81628D1A687008AA02C /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CFA81528D1A687008AA02C /* FirebaseManager.swift */; };
@@ -58,7 +60,7 @@
 		C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A5A28C1CE6300940AFE /* LocationManager.swift */; };
 		C7D31A5D28C1D28900940AFE /* CreateRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A5C28C1D28900940AFE /* CreateRoomView.swift */; };
 		C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */; };
-		C7D31A6228C1D4F100940AFE /* FriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */; };
+		C7D31A6228C1D4F100940AFE /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6128C1D4F100940AFE /* FriendsTableViewCell.swift */; };
 		C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */; };
 		C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */; };
 		C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */; };
@@ -118,6 +120,8 @@
 		C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C7586E8928CDC566003B6639 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75D194028DA09B10062732F /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
+		C75D194228DA0A890062732F /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		C75D194428DA0ACD0062732F /* KakaoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoManager.swift; sourceTree = "<group>"; };
 		C766997E28D30D10005C862C /* AddFriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		C766998028D30D33005C862C /* AddFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
 		C7CFA81228CF877A008AA02C /* WhereRU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereRU.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +145,7 @@
 		C7D31A5A28C1CE6300940AFE /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C7D31A5C28C1D28900940AFE /* CreateRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomView.swift; sourceTree = "<group>"; };
 		C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
-		C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionViewCell.swift; sourceTree = "<group>"; };
+		C7D31A6128C1D4F100940AFE /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceView.swift; sourceTree = "<group>"; };
 		C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewController.swift; sourceTree = "<group>"; };
 		C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlaceViewModel.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 			children = (
 				C7D31A5628C1CE2C00940AFE /* RoomsViewModel.swift */,
 				C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */,
+				C75D194228DA0A890062732F /* FriendsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -369,8 +374,8 @@
 		C7D31A5828C1CE4E00940AFE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C7D31A5928C1CE5300940AFE /* Manager */,
 				C75D194028DA09B10062732F /* Friends.swift */,
+				C7D31A5928C1CE5300940AFE /* Manager */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +385,7 @@
 			children = (
 				C7D31A5A28C1CE6300940AFE /* LocationManager.swift */,
 				C7CFA81528D1A687008AA02C /* FirebaseManager.swift */,
+				C75D194428DA0ACD0062732F /* KakaoManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -387,7 +393,7 @@
 		C7D31A6028C1D4C500940AFE /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C7D31A6128C1D4F100940AFE /* FriendsCollectionViewCell.swift */,
+				C7D31A6128C1D4F100940AFE /* FriendsTableViewCell.swift */,
 				C7D31A6B28C4A19E00940AFE /* LocationTableViewCell.swift */,
 			);
 			path = Cell;
@@ -637,11 +643,13 @@
 				C7D31A5728C1CE2C00940AFE /* RoomsViewModel.swift in Sources */,
 				C7D31A5328C099CC00940AFE /* RoomsView.swift in Sources */,
 				C7D31A5528C099F600940AFE /* SettingView.swift in Sources */,
+				C75D194528DA0ACD0062732F /* KakaoManager.swift in Sources */,
 				C7D31A1228BF51DF00940AFE /* FriendsViewController.swift in Sources */,
 				C7D31A4628C0902200940AFE /* FriendsView.swift in Sources */,
 				C7D31A0E28BF51DF00940AFE /* AppDelegate.swift in Sources */,
 				C7D31A5D28C1D28900940AFE /* CreateRoomView.swift in Sources */,
-				C7D31A6228C1D4F100940AFE /* FriendsCollectionViewCell.swift in Sources */,
+				C75D194328DA0A890062732F /* FriendsViewModel.swift in Sources */,
+				C7D31A6228C1D4F100940AFE /* FriendsTableViewCell.swift in Sources */,
 				C7D31A5128C096D100940AFE /* SettingViewController.swift in Sources */,
 				C766998128D30D33005C862C /* AddFriendView.swift in Sources */,
 				C7D31A4F28C096BF00940AFE /* RoomsViewController.swift in Sources */,
