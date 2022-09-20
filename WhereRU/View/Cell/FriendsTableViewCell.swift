@@ -50,10 +50,10 @@ class FriendsTableViewCell: UITableViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            profileImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            profileImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             
             nickNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            nickNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
+            nickNameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10)
         ])
     }
 }
