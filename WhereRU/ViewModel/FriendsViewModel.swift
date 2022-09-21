@@ -12,4 +12,12 @@ class FriendsViewModel {
     @Published var friendsList : FriendsList?
     
     let kakaoManager = KakaoManager()
+    
+    func getFriendsListFromKakao() {
+        kakaoManager.getFriendsListFromKakao { list in
+            if let list = list {
+                self.friendsList = list
+            }
+        }
+    }
 }
