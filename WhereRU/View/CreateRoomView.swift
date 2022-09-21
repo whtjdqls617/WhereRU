@@ -9,13 +9,6 @@ import UIKit
 
 class CreateRoomView: UIView {
     
-    let friendListLabel : UILabel = {
-        let label = UILabel()
-        label.text = "친구 선택"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     let friendsCollecionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,7 +109,6 @@ class CreateRoomView: UIView {
             buttonStackView.addArrangedSubview($0)
         }
         
-        self.addSubview(friendListLabel)
         self.addSubview(friendsCollecionView)
         self.addSubview(placeStackView)
         self.addSubview(moneyStackView)
@@ -128,26 +120,24 @@ class CreateRoomView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            friendListLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            friendListLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 80),
             
-            friendsCollecionView.topAnchor.constraint(equalTo: friendListLabel.bottomAnchor, constant: 20),
+            friendsCollecionView.topAnchor.constraint(equalTo: self.topAnchor),
             friendsCollecionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             friendsCollecionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
             friendsCollecionView.bottomAnchor.constraint(equalTo: self.centerYAnchor),
             
-            placeStackView.topAnchor.constraint(equalTo: friendsCollecionView.bottomAnchor, constant: 20),
+            placeStackView.topAnchor.constraint(equalTo: friendsCollecionView.bottomAnchor),
             placeStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             placeStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20),
             
-            moneyStackView.topAnchor.constraint(equalTo: placeStackView.bottomAnchor, constant: 20),
+            moneyStackView.topAnchor.constraint(equalTo: placeStackView.bottomAnchor, constant: 30),
             moneyStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
             moneyStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 20),
             
             buttonStackView.topAnchor.constraint(equalTo: moneyStackView.bottomAnchor, constant: 50),
             buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            buttonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+//            buttonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 

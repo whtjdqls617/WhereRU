@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCEUB5jqkG7tReq-UQlHEVISgrE2M4JSY4")
         GMSPlacesClient.provideAPIKey("AIzaSyCEUB5jqkG7tReq-UQlHEVISgrE2M4JSY4")
+        GMSServices.setMetalRendererEnabled(true)
         KakaoSDK.initSDK(appKey: "925d2253c53a8493627b7be08cafcb5d")
         FirebaseApp.configure()
         

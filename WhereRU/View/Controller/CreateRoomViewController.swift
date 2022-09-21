@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKFriend
 
 class CreateRoomViewController: BaseViewController {
         
@@ -18,6 +19,10 @@ class CreateRoomViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let button = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressPlusButton))
+        navigationItem.rightBarButtonItem = button
+        navigationItem.title = "친구 추가"
                 
         let tapPlace = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
         createRoomView.placeInputLabel.isUserInteractionEnabled = true
@@ -39,6 +44,17 @@ class CreateRoomViewController: BaseViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    @objc func pressPlusButton() {
+        let openPickerFriendRequestParams = OpenPickerFriendRequestParams()
+
+        PickerApi.shared.selectFriend(params: openPickerFriendRequestParams) { selectUsers, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+            }
+        }
     }
     
     @objc func pressFindPlaceButton() {
