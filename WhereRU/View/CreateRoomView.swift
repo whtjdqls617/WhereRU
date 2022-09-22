@@ -11,6 +11,8 @@ class CreateRoomView: UIView {
     
     let friendsCollecionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.register(AddedFriendsCollectionViewCell.self, forCellWithReuseIdentifier: AddedFriendsCollectionViewCell.identifier)
+        collectionView.collectionViewLayout.invalidateLayout()
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
