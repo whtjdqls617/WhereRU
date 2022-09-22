@@ -15,6 +15,8 @@ class CreateRoomViewController: BaseViewController {
     private let createRoomViewModel = CreateRoomViewModel()
     
     var selectedFriends : SelectedUsers?
+    var latitude : Double = 0
+    var longitude : Double = 0
     private var disposalbleBag = Set<AnyCancellable>()
 
     override func loadView() {
@@ -24,7 +26,6 @@ class CreateRoomViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         createRoomView.friendsCollecionView.dataSource = self
         
         setBinding()
@@ -66,6 +67,24 @@ class CreateRoomViewController: BaseViewController {
     }
     
     @objc func pressCreateButton() {
+        // 방 생성 (방이름, 장소, 인원, 시간, 돈)
+        
+        // 내 방목록 업데이트
+        
+        // 상대방들 방목록 업데이트
+        
+        // 방이름
+        // 장소 (위도, 경도)
+        // 인원 (id, 닉네임, 프로필사진)
+        // 시간
+        // 돈
+        
+        let name = String().makeRandomString()
+        let location = [latitude, longitude]
+        guard let money = Int(createRoomView.moneyInputTextField.text ?? "") else {return}
+        guard let friends = selectedFriends else {return}
+        let limitTime = "6:00"
+        createRoomViewModel.updateRoomsList(name, location, money, friends, limitTime)
         dismiss(animated: true)
     }
     
@@ -86,10 +105,12 @@ extension CreateRoomViewController {
 }
 
 extension CreateRoomViewController: SelectLocationDelegate {
-    func updatePlaceLabel(_ destination: String?) {
+    func getPlaceInfo(_ destination : String?, _ latitude : Double, _ longitude : Double) {
         if let destination = destination {
             print(destination)
             createRoomView.placeInputLabel.text = destination
+            self.latitude = latitude
+            self.longitude = longitude
         } else {
             createRoomView.placeInputLabel.text = "선택"
             createRoomView.placeInputLabel.textColor = .systemBlue

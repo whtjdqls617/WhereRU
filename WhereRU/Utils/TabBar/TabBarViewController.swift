@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController {
 
         let friendsViewController = FriendsViewController()
         let roomsViewController = RoomsViewController()
-        let settingViewController = SettingViewController()
+        let etcViewController = EtcViewController()
         
         let addFriendButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressAddFriendButton))
         let createButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressCreateButton))
@@ -26,15 +26,15 @@ class TabBarViewController: UITabBarController {
         friendsViewController.navigationItem.rightBarButtonItem = addFriendButton
         roomsViewController.tabBarItem.image = UIImage(systemName: "bubble.right")
         roomsViewController.navigationItem.rightBarButtonItem = createButton
-        settingViewController.tabBarItem.image = UIImage(systemName: "ellipsis")
+        etcViewController.tabBarItem.image = UIImage(systemName: "ellipsis")
 
         let naviFriendsController = UINavigationController(rootViewController: friendsViewController)
         let naviRoomsController = UINavigationController(rootViewController: roomsViewController)
-        let naviSettingController = UINavigationController(rootViewController: settingViewController)
+        let naviEtcController = UINavigationController(rootViewController: etcViewController)
         
-        naviSettingController.isNavigationBarHidden = true
+        naviEtcController.isNavigationBarHidden = true
         
-        setViewControllers([naviFriendsController, naviRoomsController, naviSettingController], animated: false)
+        setViewControllers([naviFriendsController, naviRoomsController, naviEtcController], animated: false)
     }
     
     @objc func pressAddFriendButton() {

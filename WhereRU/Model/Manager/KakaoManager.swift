@@ -32,7 +32,7 @@ class KakaoManager {
                 print(error.localizedDescription)
             }
             else if let friends = selectedUsers {
-                print(type(of: selectedUsers))
+                print(friends.users?[0].id)
                 completion(friends)
             }
         }

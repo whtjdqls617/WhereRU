@@ -8,17 +8,17 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import KakaoSDKFriend
+import KakaoSDKUser
 
 class FirebaseManager {
     
     let db = Firestore.firestore()
 
-    func uploadDataToFirestore(_ email : String, _ nickName : String) {
-        let totalId = makeDocumentName(email)
+    func uploadDataToFirestore(_ email : String, _ nickName : String, _ id : Int64) {
         
-        db.collection("Users").document(totalId).setData(["email" : email, "nickName" : nickName]) { error in
+        db.collection("Users").document(String(id)).setData(["email" : email, "nickName" : nickName]) { error in
             if let error = error {
-                print("여기?")
                 print(error.localizedDescription)
             } else {
                 print("Success!")
@@ -81,5 +81,32 @@ class FirebaseManager {
         
         let docName = makeDocumentName(currentUserEmail)
         db.collection("Users").document(docName).setData(["friends" : [email : nickName]], merge: true)
+    }
+    
+    func updateRoomsOfFirestore(_ name : String, _ location : [Double], _ money : Int, _ friends : SelectedUsers, _ limitTime : String) {
+        
+        // 나 업데이트
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                
+                var temp = [[String : Any]]()
+                guard let guardFriends = friends.users else {return}
+                temp = guardFriends.compactMap{["profile" : $0.profileThumbnailImage as Any, "nick name" : $0.profileNickname as Any]}
+                
+                let docData: [String:Any] = [
+                    "money" : money,
+                    "location" : location,
+                    "friends" : temp,
+//                    "limit time" : limitTime
+                ]
+                
+                self.db.collection("Users").document(String(user?.id ?? 0)).setData(["rooms" : [name : docData]], merge: true)
+
+            }
+        }
+        // 유저들 업데이트
     }
 }

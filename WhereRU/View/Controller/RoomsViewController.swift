@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class RoomsViewController: BaseViewController {
 
     private let roomsView = RoomsView()
+    private let roomsViewModel = RoomsViewModel()
+    
+//    var roomsList
+    private var disposalbleBag = Set<AnyCancellable>()
     
     override func loadView() {
         super.loadView()

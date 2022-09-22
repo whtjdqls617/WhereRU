@@ -106,7 +106,7 @@ class SignInViewController: BaseViewController {
                         Auth.auth().signIn(withEmail: email, password: String(password))
                     }
                 }
-                self.firebaseManager.uploadDataToFirestore(email, name)
+                self.firebaseManager.uploadDataToFirestore(email, name, password)
             }
         }
     }
