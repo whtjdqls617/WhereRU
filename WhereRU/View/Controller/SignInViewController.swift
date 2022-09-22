@@ -67,10 +67,10 @@ class SignInViewController: BaseViewController {
                 print(error)
             }
             else {
-                print("loginWithKakaoTalk() success.")
-                
-                //do something
-                _ = oauthToken
+                self.createUserInFirebase()
+                let mainVC = TabBarViewController()
+                mainVC.modalPresentationStyle = .fullScreen
+                self.present(mainVC, animated: true)
             }
         }
     }
@@ -81,7 +81,6 @@ class SignInViewController: BaseViewController {
                 print(error)
             }
             else {
-                print("loginWithKakaoAccount() success.")
                 self.createUserInFirebase()
                 let mainVC = TabBarViewController()
                 mainVC.modalPresentationStyle = .fullScreen

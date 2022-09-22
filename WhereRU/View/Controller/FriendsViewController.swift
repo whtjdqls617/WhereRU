@@ -12,11 +12,11 @@ import KakaoSDKUser
 
 class FriendsViewController: BaseViewController {
     
-    var friendsList : FriendsList?
-    private var disposalbleBag = Set<AnyCancellable>()
-
     let friendsView = FriendsView()
     let friendsViewModel = FriendsViewModel()
+    
+    var friendsList : FriendsList?
+    private var disposalbleBag = Set<AnyCancellable>()
 
     override func loadView() {
         super.loadView()

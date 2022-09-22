@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Combine
 import KakaoSDKFriend
 
 class CreateRoomViewController: BaseViewController {
         
     private let createRoomView = CreateRoomView()
+    private let createRoomViewModel = CreateRoomViewModel()
+    
+    var selectedFriends : SelectedUsers?
+    private var disposalbleBag = Set<AnyCancellable>()
 
     override func loadView() {
         super.loadView()
@@ -19,6 +24,10 @@ class CreateRoomViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        createRoomView.friendsCollecionView.dataSource = self
+        
+        setBinding()
         
         let button = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressPlusButton))
         navigationItem.rightBarButtonItem = button
@@ -47,14 +56,7 @@ class CreateRoomViewController: BaseViewController {
     }
     
     @objc func pressPlusButton() {
-        let openPickerFriendRequestParams = OpenPickerFriendRequestParams()
-
-        PickerApi.shared.selectFriend(params: openPickerFriendRequestParams) { selectUsers, error in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-            }
-        }
+        createRoomViewModel.getSelectedFriendsListFromKakao()
     }
     
     @objc func pressFindPlaceButton() {
@@ -72,6 +74,17 @@ class CreateRoomViewController: BaseViewController {
     }
 }
 
+extension CreateRoomViewController {
+    private func setBinding() {
+        self.createRoomViewModel.$selectedFriendsList.sink { [weak self] updatedFriendsList in
+            self?.selectedFriends = updatedFriendsList
+            DispatchQueue.main.async {
+                self?.createRoomView.friendsCollecionView.reloadData()
+            }
+        }.store(in: &disposalbleBag)
+    }
+}
+
 extension CreateRoomViewController: SelectLocationDelegate {
     func updatePlaceLabel(_ destination: String?) {
         if let destination = destination {
@@ -81,5 +94,17 @@ extension CreateRoomViewController: SelectLocationDelegate {
             createRoomView.placeInputLabel.text = "선택"
             createRoomView.placeInputLabel.textColor = .systemBlue
         }
+    }
+}
+
+extension CreateRoomViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return selectedFriends?.totalCount ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddedFriendsCollectionViewCell.identifier, for: indexPath) as? AddedFriendsCollectionViewCell else {return UICollectionViewCell()}
+        cell.nickNameLabel.text = selectedFriends?.users?[indexPath.item].profileNickname
+        return cell
     }
 }

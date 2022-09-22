@@ -7,6 +7,7 @@
 
 import Foundation
 import KakaoSDKTalk
+import KakaoSDKFriend
 
 class KakaoManager {
             
@@ -17,6 +18,22 @@ class KakaoManager {
             } else if let friends = friends {
                 let result = self.parseJSON(friends)
                 completion(result)
+            }
+        }
+    }
+    
+    func getSelectedFriendsListFromKakao(completion: @escaping (SelectedUsers?) -> Void) {
+        let openPickerFriendRequestParams = OpenPickerFriendRequestParams(
+            showMyProfile: false
+        )
+
+        PickerApi.shared.selectFriends(params: openPickerFriendRequestParams) { selectedUsers, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            else if let friends = selectedUsers {
+                print(type(of: selectedUsers))
+                completion(friends)
             }
         }
     }
