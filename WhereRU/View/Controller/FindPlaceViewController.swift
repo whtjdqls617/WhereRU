@@ -11,7 +11,7 @@ import GoogleMaps
 import GooglePlaces
 
 protocol SelectLocationDelegate {
-    func updatePlaceLabel(_ destination : String?)
+    func getPlaceInfo(_ destination : String?, _ latitude : Double, _ longitude : Double)
 }
 
 class FindPlaceViewController: BaseViewController {
@@ -128,7 +128,7 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
         let newCamera = GMSCameraUpdate.setTarget(newPlace)
         findPlaceView.mapView.moveCamera(newCamera)
         
-        delegate?.updatePlaceLabel(place.name)
+        delegate?.getPlaceInfo(place.name, place.coordinate.latitude, place.coordinate.longitude)
         dismiss(animated: true)
     }
     
