@@ -24,7 +24,7 @@ class KakaoManager {
     
     func getSelectedFriendsListFromKakao(completion: @escaping (SelectedUsers?) -> Void) {
         let openPickerFriendRequestParams = OpenPickerFriendRequestParams(
-            showMyProfile: false
+            showMyProfile: true
         )
 
         PickerApi.shared.selectFriends(params: openPickerFriendRequestParams) { selectedUsers, error in
@@ -32,7 +32,6 @@ class KakaoManager {
                 print(error.localizedDescription)
             }
             else if let friends = selectedUsers {
-                print(friends.users?[0].id)
                 completion(friends)
             }
         }

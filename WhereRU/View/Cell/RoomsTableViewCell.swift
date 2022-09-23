@@ -11,18 +11,45 @@ class RoomsTableViewCell: UITableViewCell {
     
     static let identifier: String = "roomsTableViewCell"
     
-    let name = ""
+    var name = "" // 나중에 지울 때 사용
     
-    let profileImageView : UIImageView = {
+    let profileImageView1 : UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "person")
+        imageView.image = UIImage(systemName: "person.fill")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let nickNameLabel : UILabel = {
+    let profileImageView2 : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.fill")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    let imageStackView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 1
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+       return stackView
+    }()
+    
+    let totalCountOfPeopleLabel : UILabel = {
         let label = UILabel()
-        label.text = "test"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let placeLabel : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let timeLabel : UILabel = {
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -41,8 +68,14 @@ class RoomsTableViewCell: UITableViewCell {
     
     private func setupView() {
         
-        self.addSubview(profileImageView)
-        self.addSubview(nickNameLabel)
+        [profileImageView1, profileImageView2].forEach {
+            imageStackView.addArrangedSubview($0)
+        }
+        
+        self.addSubview(imageStackView)
+        self.addSubview(totalCountOfPeopleLabel)
+        self.addSubview(placeLabel)
+        self.addSubview(timeLabel)
         
         
     }
@@ -51,11 +84,19 @@ class RoomsTableViewCell: UITableViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            profileImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            imageStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            imageStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
+            imageStackView.trailingAnchor.constraint(equalTo: self.centerXAnchor, constant: -100),
             
-            nickNameLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            nickNameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10)
+            totalCountOfPeopleLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            totalCountOfPeopleLabel.leadingAnchor.constraint(equalTo: imageStackView.trailingAnchor, constant: 20),
+            
+            timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            timeLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
+            
+            placeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            placeLabel.leadingAnchor.constraint(equalTo: self.centerXAnchor, constant: 20),
+            placeLabel.trailingAnchor.constraint(equalTo: timeLabel.leadingAnchor, constant: 20)
         ])
     }
     
