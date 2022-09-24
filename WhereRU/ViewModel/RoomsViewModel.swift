@@ -10,13 +10,13 @@ import CoreLocation
 
 class RoomsViewModel {
     
-    @Published var roomsList : [Any]?
+    @Published var roomsList : [Room]?
     
     let firebaseManager = FirebaseManager()
     
     func getRoomdDataFromFirestore() {
         firebaseManager.getRoomsListFromFirestore() { data in
-            self.roomsList = data["rooms"] as? [Any]
+            self.roomsList = data
         }
     }
 }

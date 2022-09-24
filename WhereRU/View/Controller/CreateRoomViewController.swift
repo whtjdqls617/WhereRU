@@ -80,7 +80,7 @@ class CreateRoomViewController: BaseViewController {
         // 돈
         
         let name = String().makeRandomString()
-        let locationName = createRoomView.placeLabel.text
+        let locationName = createRoomView.placeInputLabel.text
         let location = ["name" : locationName as Any, "coordinate" : [latitude, longitude]] as [String : Any]
         guard let money = Int(createRoomView.moneyInputTextField.text ?? "") else {return}
         guard let friends = selectedFriends else {return}

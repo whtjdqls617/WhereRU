@@ -37,6 +37,8 @@
 		C74ABA4128DC4618007EE11B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4028DC4618007EE11B /* String.swift */; };
 		C74ABA4328DC49B9007EE11B /* EtcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4228DC49B9007EE11B /* EtcView.swift */; };
 		C74ABA4528DC49C9007EE11B /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4428DC49C9007EE11B /* EtcViewController.swift */; };
+		C74ABA4728DF2D19007EE11B /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4628DF2D19007EE11B /* Rooms.swift */; };
+		C74ABA4928DF2F0B007EE11B /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4828DF2F0B007EE11B /* Codable.swift */; };
 		C7586E1F28C9F395003B6639 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E1E28C9F395003B6639 /* SignInView.swift */; };
 		C7586E2128C9F3A2003B6639 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2028C9F3A2003B6639 /* SignUpView.swift */; };
 		C7586E2328C9F3B9003B6639 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2228C9F3B9003B6639 /* SignInViewController.swift */; };
@@ -132,6 +134,8 @@
 		C74ABA4028DC4618007EE11B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C74ABA4228DC49B9007EE11B /* EtcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcView.swift; sourceTree = "<group>"; };
 		C74ABA4428DC49C9007EE11B /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
+		C74ABA4628DF2D19007EE11B /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
+		C74ABA4828DF2F0B007EE11B /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
 		C7586E1E28C9F395003B6639 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C7586E2028C9F3A2003B6639 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C7586E2228C9F3B9003B6639 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 			children = (
 				C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */,
 				C74ABA4028DC4618007EE11B /* String.swift */,
+				C74ABA4828DF2F0B007EE11B /* Codable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				C75D194028DA09B10062732F /* Friends.swift */,
+				C74ABA4628DF2D19007EE11B /* Rooms.swift */,
 				C7D31A5928C1CE5300940AFE /* Manager */,
 			);
 			path = Model;
@@ -723,11 +729,13 @@
 				C7D31A6228C1D4F100940AFE /* FriendsTableViewCell.swift in Sources */,
 				C766998128D30D33005C862C /* AddFriendView.swift in Sources */,
 				C7D31A4F28C096BF00940AFE /* RoomsViewController.swift in Sources */,
+				C74ABA4728DF2D19007EE11B /* Rooms.swift in Sources */,
 				C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */,
 				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
 				C7838A7128DAFE5E00D6D79A /* WhereRUTests.swift in Sources */,
 				C766997F28D30D10005C862C /* AddFriendViewController.swift in Sources */,
 				C7838A6328DAED8500D6D79A /* AddFriendTableViewCell.swift in Sources */,
+				C74ABA4928DF2F0B007EE11B /* Codable.swift in Sources */,
 				C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */,
 				C74ABA3B28DC1B6E007EE11B /* AddedFriendsCollectionViewCell.swift in Sources */,
 				C75D194128DA09B10062732F /* Friends.swift in Sources */,

@@ -13,7 +13,7 @@ class RoomsViewController: BaseViewController {
     private let roomsView = RoomsView()
     private let roomsViewModel = RoomsViewModel()
     
-    var roomsList : [Any]?
+    var roomsList : [Room]?
     private var disposalbleBag = Set<AnyCancellable>()
     
     override func loadView() {
@@ -32,6 +32,7 @@ class RoomsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        print(roomsList)
         roomsViewModel.getRoomdDataFromFirestore()
     }
     
@@ -55,9 +56,10 @@ extension RoomsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RoomsTableViewCell.identifier, for: indexPath) as? RoomsTableViewCell else {return UITableViewCell()}
-        cell.name = "11111"
-        cell.totalCountOfPeopleLabel.text = "2"
-        cell.placeLabel.text = "사당역"
+        
+        cell.name = roomsList?[indexPath.row].name ?? ""
+        cell.totalCountOfPeopleLabel.text = String(roomsList?[indexPath.row].friends.count ?? 0)
+        cell.placeLabel.text = roomsList?[indexPath.row].location.name
         return cell
     }
 }
