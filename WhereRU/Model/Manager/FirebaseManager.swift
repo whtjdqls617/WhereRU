@@ -110,7 +110,7 @@ class FirebaseManager {
         }
     }
     
-    func getRoomsListFromFirestore(completion: @escaping ([String : Any]) -> Void) {
+    func getRoomsListFromFirestore(completion: @escaping ([Room]?) -> Void) {
         // 내 id가지고 진행해야 함
         // 개인 id를 그냥 로컬에 가지고 있으면 편할 것 같음
         UserApi.shared.me() {(user, error) in
@@ -124,10 +124,29 @@ class FirebaseManager {
                         print("방이 존재하지 않습니다.")
                     } else if let document = document, document.exists {
                         guard let data = document.data() else {return}
-                        completion(data)
+                        let tmp = self.parseJSON(data)
+                        completion(tmp)
                     }
                 }
+                
+                
             }
         }
+    }
+    
+    func parseJSON(_ data : [String : Any]) -> [Room]? {
+        do {
+            var tmp : User
+            let data = try JSONSerialization.data(withJSONObject: data, options: [])
+            tmp = try JSONDecoder().decode(User.self, from: data)
+            
+            
+            print("room : ", tmp.rooms)
+            return tmp.rooms
+         }
+         catch {
+           print(error)
+         }
+        return nil
     }
 }
