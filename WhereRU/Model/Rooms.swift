@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct RoomsList : Codable {
-    var elements : [Room]
-}
-
 struct Room : Codable {
     let friends : [[String : String?]]
     let location : Location
