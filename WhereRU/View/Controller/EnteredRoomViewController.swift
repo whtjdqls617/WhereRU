@@ -14,8 +14,10 @@ class EnteredRoomViewController: BaseViewController {
     var placeName : String = ""
     var placeCoordinate = [Double]()
     var money : Int = 0
-    
+    var roomName : String = ""
+        
     let enteredRoomView = EnteredRoomView()
+    let enteredRoomViewModel = EnteredRoomViewModel()
     
     override func loadView() {
         super.loadView()
@@ -34,13 +36,25 @@ class EnteredRoomViewController: BaseViewController {
         enteredRoomView.arriveButton.addGestureRecognizer(tapArrive)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     func configure() {
         enteredRoomView.placeInputLabel.text = placeName
         enteredRoomView.moneyInputLabel.text = String(money)
     }
     
     @objc func pressArriveButton() {
-        
+        if enteredRoomViewModel.checkArrive(placeCoordinate, frineds, roomName) {
+            enteredRoomView.arriveButton.isEnabled = false
+            enteredRoomView.arriveButton.backgroundColor = .systemGray
+            enteredRoomView.arriveStatusImageView.image = UIImage(systemName: "checkmark.circle")
+            enteredRoomView.arriveStatusImageView.tintColor = .systemGreen
+        } else {
+            enteredRoomView.arriveStatusImageView.image = UIImage(systemName: "xmark.circle")
+            enteredRoomView.arriveStatusImageView.tintColor = .systemRed
+        }
     }
 }
 

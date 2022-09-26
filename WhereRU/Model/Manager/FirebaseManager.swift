@@ -26,6 +26,36 @@ class FirebaseManager {
         }
     }
     
+//    func updateStatus(_ idOfFriends : [String?], _ roomName : String) {
+//        // 속해있는 인원 전부의 그 방 도착한 애 상태를 바꿔야함
+//        let ids = idOfFriends.compactMap {$0}
+//        for id in ids {
+//            getRoomsFromAllUsers(id) { roomList in
+//                if let roomList = roomList {
+//                    for i in roomList.indices {
+//                        if roomList[i].name == roomName {
+//                            self.updateRoomsOfFirestore(i, id, roomName, roomList[i].location, roomList[i].money, roomList[i].friends, "")
+//                            print("here")
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    func getRoomsFromAllUsers(_ id : String, completion: @escaping ([Room]?) -> Void) {
+        let docRef = self.db.collection("Users").document(id)
+        docRef.getDocument { document, error in
+            if error != nil {
+                print("방이 존재하지 않습니다.")
+            } else if let document = document, document.exists {
+                guard let data = document.data() else {return}
+                let tmp = self.parseJSON(data)
+                completion(tmp)
+            }
+        }
+    }
+    
     func checkVaildEmailFromFirestore(_ email : String, completion: @escaping (Bool) -> Void) {
         if email.contains("@") == false {
             return
@@ -86,7 +116,7 @@ class FirebaseManager {
     func updateRoomsOfFirestore(_ name : String, _ location : [String : Any], _ money : Int, _ friends : SelectedUsers, _ limitTime : String) {
         var temp = [[String : Any]]()
         guard let guardFriends = friends.users else {return}
-        temp = guardFriends.compactMap{["profile" : $0.profileThumbnailImage as Any, "nick name" : $0.profileNickname as Any, "id" : $0.id as Any]}
+        temp = guardFriends.compactMap{["profile" : $0.profileThumbnailImage as Any, "nick name" : $0.profileNickname as Any, "id" : String($0.id ?? 0) as Any, "status" : "false"]}
         let docData: [String:Any] = [
             "name" : name,
             "money" : money,
@@ -97,6 +127,27 @@ class FirebaseManager {
             db.collection("Users").document(String(user.id ?? 0)).updateData(["rooms" : FieldValue.arrayUnion([docData])])
         }
     }
+    
+//    func updateRoomsOfFirestore(_ i : Int, _ id : String, _ name : String, _ location : Location, _ money : Int, _ friends : [[String : String?]], _ limitTime : String) {
+//        var temp = [[String : Any]]()
+//        var status = "false"
+//        if id == UserDefaults.standard.string(forKey: "id") {
+//            status = "true"
+//        }
+//        var location2 : [String : Any]?
+//        location2?["coordinate"] = location.coordinate
+//        location2?["name"] = location.name
+//        temp = friends.compactMap{["profile" : $0["profile"] as Any, "nick name" : $0["nick name"] as Any, "id" : $0["id"] as Any, "status" : status]}
+//        let docData: [String:Any] = [
+//            "name" : name,
+//            "money" : money,
+//            "location" : location2 as Any,
+//            "friends" : temp,
+//        ]
+//
+//        let batch = db.batch()
+//        batch.updateData(["rooms" : "hi"], forDocument: db.collection("Users").document(id))
+//    }
     
     func getRoomsListFromFirestore(completion: @escaping ([Room]?) -> Void) {
         // 내 id가지고 진행해야 함

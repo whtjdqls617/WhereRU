@@ -8,9 +8,21 @@
 import Foundation
 import KakaoSDKTalk
 import KakaoSDKFriend
+import KakaoSDKUser
 
 class KakaoManager {
-            
+    
+    func saveMyId() {
+        UserApi.shared.me() {(user, error) in
+            if let error = error {
+                print(error)
+            }
+            else {
+                UserDefaults.standard.set(user?.id, forKey: "id")
+            }
+        }
+    }
+    
     func getFriendsListFromKakao(completion: @escaping (FriendsList?) -> Void) {
         TalkApi.shared.friends { friends, error in
             if let error = error {
@@ -26,7 +38,7 @@ class KakaoManager {
         let openPickerFriendRequestParams = OpenPickerFriendRequestParams(
             showMyProfile: true
         )
-
+        
         PickerApi.shared.selectFriends(params: openPickerFriendRequestParams) { selectedUsers, error in
             if let error = error {
                 print(error.localizedDescription)
