@@ -113,8 +113,6 @@ extension FindPlaceViewController {
 
 extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-//        print("Place name: \(String(describing: place.name))") //셀탭한 글씨출력
-//        print(place.coordinate)
         findPlaceView.mapView.clear()
         let zoomCamera = GMSCameraUpdate.zoomIn()
         findPlaceView.mapView.animate(with: zoomCamera)
@@ -137,7 +135,6 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
-        print("bye")
         dismiss(animated: true)
     }
 }

@@ -73,5 +73,6 @@ extension RoomsViewController: UITableViewDelegate {
         roomVC.placeName = roomsList?[indexPath.row].location.name ?? ""
         roomVC.placeCoordinate = roomsList?[indexPath.row].location.coordinate ?? []
         roomVC.money = roomsList?[indexPath.row].money ?? 0
+        roomVC.roomName = roomsList?[indexPath.row].name ?? ""
     }
 }

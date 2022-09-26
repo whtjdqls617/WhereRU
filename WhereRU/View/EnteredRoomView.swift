@@ -68,6 +68,12 @@ class EnteredRoomView: UIView {
         return button
     }()
     
+    let arriveStatusImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -92,6 +98,7 @@ class EnteredRoomView: UIView {
         self.addSubview(placeStackView)
         self.addSubview(moneyStackView)
         self.addSubview(arriveButton)
+        self.addSubview(arriveStatusImageView)
         
     }
     
@@ -116,7 +123,9 @@ class EnteredRoomView: UIView {
             arriveButton.topAnchor.constraint(equalTo: moneyStackView.bottomAnchor, constant: 50),
             arriveButton.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             arriveButton.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            buttonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            
+            arriveStatusImageView.topAnchor.constraint(equalTo: arriveButton.bottomAnchor, constant: 30),
+            arriveStatusImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
 

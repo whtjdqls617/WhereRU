@@ -13,6 +13,10 @@ class FriendsViewModel {
     
     let kakaoManager = KakaoManager()
     
+    func saveMyIdFromKakao() {
+        kakaoManager.saveMyId()
+    }
+    
     func getFriendsListFromKakao() {
         kakaoManager.getFriendsListFromKakao { list in
             if let list = list {
