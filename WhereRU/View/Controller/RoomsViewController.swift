@@ -65,5 +65,13 @@ extension RoomsViewController: UITableViewDataSource {
 }
 
 extension RoomsViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let roomVC = EnteredRoomViewController()
+        navigationController?.pushViewController(roomVC, animated: true)
+        
+        roomVC.frineds = roomsList?[indexPath.row].friends
+        roomVC.placeName = roomsList?[indexPath.row].location.name ?? ""
+        roomVC.placeCoordinate = roomsList?[indexPath.row].location.coordinate ?? []
+        roomVC.money = roomsList?[indexPath.row].money ?? 0
+    }
 }

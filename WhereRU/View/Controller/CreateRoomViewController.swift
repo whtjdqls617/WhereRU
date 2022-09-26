@@ -67,18 +67,6 @@ class CreateRoomViewController: BaseViewController {
     }
     
     @objc func pressCreateButton() {
-        // 방 생성 (방이름, 장소, 인원, 시간, 돈)
-        
-        // 내 방목록 업데이트
-        
-        // 상대방들 방목록 업데이트
-        
-        // 방이름
-        // 장소 (위도, 경도)
-        // 인원 (id, 닉네임, 프로필사진)
-        // 시간
-        // 돈
-        
         let name = String().makeRandomString()
         let locationName = createRoomView.placeInputLabel.text
         let location = ["name" : locationName as Any, "coordinate" : [latitude, longitude]] as [String : Any]
