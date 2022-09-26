@@ -39,8 +39,10 @@
 		C74ABA4528DC49C9007EE11B /* EtcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4428DC49C9007EE11B /* EtcViewController.swift */; };
 		C74ABA4728DF2D19007EE11B /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4628DF2D19007EE11B /* Rooms.swift */; };
 		C74ABA4928DF2F0B007EE11B /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4828DF2F0B007EE11B /* Codable.swift */; };
-		C74ABA4F28E0A32E007EE11B /* SelectedRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4E28E0A32E007EE11B /* SelectedRoomView.swift */; };
-		C74ABA5128E0A340007EE11B /* SelectedRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA5028E0A340007EE11B /* SelectedRoomViewController.swift */; };
+		C74ABA4F28E0A32E007EE11B /* EnteredRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA4E28E0A32E007EE11B /* EnteredRoomView.swift */; };
+		C74ABA5128E0A340007EE11B /* EnteredRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA5028E0A340007EE11B /* EnteredRoomViewController.swift */; };
+		C74ABA5328E1617C007EE11B /* EnteredRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA5228E1617C007EE11B /* EnteredRoomViewModel.swift */; };
+		C74ABA5528E166E7007EE11B /* EnteredRoomFriendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74ABA5428E166E7007EE11B /* EnteredRoomFriendsCollectionViewCell.swift */; };
 		C7586E1F28C9F395003B6639 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E1E28C9F395003B6639 /* SignInView.swift */; };
 		C7586E2128C9F3A2003B6639 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2028C9F3A2003B6639 /* SignUpView.swift */; };
 		C7586E2328C9F3B9003B6639 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2228C9F3B9003B6639 /* SignInViewController.swift */; };
@@ -138,8 +140,10 @@
 		C74ABA4428DC49C9007EE11B /* EtcViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtcViewController.swift; sourceTree = "<group>"; };
 		C74ABA4628DF2D19007EE11B /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		C74ABA4828DF2F0B007EE11B /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
-		C74ABA4E28E0A32E007EE11B /* SelectedRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRoomView.swift; sourceTree = "<group>"; };
-		C74ABA5028E0A340007EE11B /* SelectedRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedRoomViewController.swift; sourceTree = "<group>"; };
+		C74ABA4E28E0A32E007EE11B /* EnteredRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredRoomView.swift; sourceTree = "<group>"; };
+		C74ABA5028E0A340007EE11B /* EnteredRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredRoomViewController.swift; sourceTree = "<group>"; };
+		C74ABA5228E1617C007EE11B /* EnteredRoomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredRoomViewModel.swift; sourceTree = "<group>"; };
+		C74ABA5428E166E7007EE11B /* EnteredRoomFriendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteredRoomFriendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C7586E1E28C9F395003B6639 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C7586E2028C9F3A2003B6639 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C7586E2228C9F3B9003B6639 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -362,7 +366,7 @@
 				C766998028D30D33005C862C /* AddFriendView.swift */,
 				C7D31A5C28C1D28900940AFE /* CreateRoomView.swift */,
 				C7D31A6328C1DE0200940AFE /* FindPlaceView.swift */,
-				C74ABA4E28E0A32E007EE11B /* SelectedRoomView.swift */,
+				C74ABA4E28E0A32E007EE11B /* EnteredRoomView.swift */,
 				C74ABA4228DC49B9007EE11B /* EtcView.swift */,
 				C7D31A6028C1D4C500940AFE /* Cell */,
 				C7D31A3F28BF523A00940AFE /* Controller */,
@@ -381,7 +385,7 @@
 				C7D31A5E28C1D2A200940AFE /* CreateRoomViewController.swift */,
 				C7D31A6528C474B700940AFE /* FindPlaceViewController.swift */,
 				C74ABA4428DC49C9007EE11B /* EtcViewController.swift */,
-				C74ABA5028E0A340007EE11B /* SelectedRoomViewController.swift */,
+				C74ABA5028E0A340007EE11B /* EnteredRoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -402,6 +406,7 @@
 				C7D31A6728C4924F00940AFE /* FindPlaceViewModel.swift */,
 				C75D194228DA0A890062732F /* FriendsViewModel.swift */,
 				C74ABA3C28DC218E007EE11B /* CreateRoomViewModel.swift */,
+				C74ABA5228E1617C007EE11B /* EnteredRoomViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 				C7838A6228DAED8500D6D79A /* AddFriendTableViewCell.swift */,
 				C74ABA3A28DC1B6E007EE11B /* AddedFriendsCollectionViewCell.swift */,
 				C74ABA3E28DC3B15007EE11B /* RoomsTableViewCell.swift */,
+				C74ABA5428E166E7007EE11B /* EnteredRoomFriendsCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -734,10 +740,11 @@
 				C74ABA3D28DC218E007EE11B /* CreateRoomViewModel.swift in Sources */,
 				C7D31A6228C1D4F100940AFE /* FriendsTableViewCell.swift in Sources */,
 				C766998128D30D33005C862C /* AddFriendView.swift in Sources */,
+				C74ABA5328E1617C007EE11B /* EnteredRoomViewModel.swift in Sources */,
 				C7D31A4F28C096BF00940AFE /* RoomsViewController.swift in Sources */,
 				C74ABA4728DF2D19007EE11B /* Rooms.swift in Sources */,
 				C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */,
-				C74ABA5128E0A340007EE11B /* SelectedRoomViewController.swift in Sources */,
+				C74ABA5128E0A340007EE11B /* EnteredRoomViewController.swift in Sources */,
 				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
 				C7838A7128DAFE5E00D6D79A /* WhereRUTests.swift in Sources */,
 				C766997F28D30D10005C862C /* AddFriendViewController.swift in Sources */,
@@ -746,7 +753,7 @@
 				C7D31A5B28C1CE6300940AFE /* LocationManager.swift in Sources */,
 				C74ABA3B28DC1B6E007EE11B /* AddedFriendsCollectionViewCell.swift in Sources */,
 				C75D194128DA09B10062732F /* Friends.swift in Sources */,
-				C74ABA4F28E0A32E007EE11B /* SelectedRoomView.swift in Sources */,
+				C74ABA4F28E0A32E007EE11B /* EnteredRoomView.swift in Sources */,
 				C7D31A4928C090CD00940AFE /* TabBarViewController.swift in Sources */,
 				C700870F28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift in Sources */,
 				C7586E1F28C9F395003B6639 /* SignInView.swift in Sources */,
@@ -759,6 +766,7 @@
 				C7D31A6428C1DE0200940AFE /* FindPlaceView.swift in Sources */,
 				C74ABA4128DC4618007EE11B /* String.swift in Sources */,
 				C7D31A6828C4924F00940AFE /* FindPlaceViewModel.swift in Sources */,
+				C74ABA5528E166E7007EE11B /* EnteredRoomFriendsCollectionViewCell.swift in Sources */,
 				C7586E2328C9F3B9003B6639 /* SignInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

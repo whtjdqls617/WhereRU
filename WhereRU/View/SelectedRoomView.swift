@@ -1,5 +1,5 @@
 //
-//  SelectedRoomView.swift
+//  EnteredRoomView.swift
 //  WhereRU
 //
 //  Created by 조성빈 on 2022/09/25.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SelectedRoomView: UIView {
+class EnteredRoomView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

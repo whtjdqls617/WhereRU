@@ -86,25 +86,13 @@ class FirebaseManager {
     func updateRoomsOfFirestore(_ name : String, _ location : [String : Any], _ money : Int, _ friends : SelectedUsers, _ limitTime : String) {
         var temp = [[String : Any]]()
         guard let guardFriends = friends.users else {return}
-        temp = guardFriends.compactMap{["profile" : $0.profileThumbnailImage as Any, "nick name" : $0.profileNickname as Any]}
+        temp = guardFriends.compactMap{["profile" : $0.profileThumbnailImage as Any, "nick name" : $0.profileNickname as Any, "id" : $0.id as Any]}
         let docData: [String:Any] = [
             "name" : name,
             "money" : money,
             "location" : location,
             "friends" : temp,
-            //                    "limit time" : limitTime
         ]
-        // 나 업데이트
-        //        UserApi.shared.me() {(user, error) in
-        //            if let error = error {
-        //                print(error)
-        //            }
-        //            else {
-        //                self.db.collection("Users").document(String(user?.id ?? 0)).setData(["rooms" : [name : docData]], merge: true)
-        //                print(temp)
-        //            }
-        //        }
-        //         유저들 업데이트
         for user in guardFriends {
             db.collection("Users").document(String(user.id ?? 0)).updateData(["rooms" : FieldValue.arrayUnion([docData])])
         }
