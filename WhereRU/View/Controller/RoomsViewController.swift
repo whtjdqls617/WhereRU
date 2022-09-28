@@ -14,6 +14,7 @@ class RoomsViewController: BaseViewController {
     private let roomsViewModel = RoomsViewModel()
     
     var roomsList : [Room]?
+    var friendsInRoomList : [[FriendInRoom]]?
     private var disposalbleBag = Set<AnyCancellable>()
     
     override func loadView() {
@@ -32,7 +33,6 @@ class RoomsViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        print(roomsList)
         roomsViewModel.getRoomdDataFromFirestore()
     }
     
@@ -42,6 +42,12 @@ extension RoomsViewController {
     private func setBinding() {
         self.roomsViewModel.$roomsList.sink { [weak self] updatedRoomsList in
             self?.roomsList = updatedRoomsList
+            DispatchQueue.main.async {
+                self?.roomsView.roomTableView.reloadData()
+            }
+        }.store(in: &disposalbleBag)
+        self.roomsViewModel.$friendsInRoomList.sink { [weak self] updatedFriendsInRoomList in
+            self?.friendsInRoomList = updatedFriendsInRoomList
             DispatchQueue.main.async {
                 self?.roomsView.roomTableView.reloadData()
             }
@@ -58,7 +64,8 @@ extension RoomsViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RoomsTableViewCell.identifier, for: indexPath) as? RoomsTableViewCell else {return UITableViewCell()}
         
         cell.name = roomsList?[indexPath.row].name ?? ""
-        cell.totalCountOfPeopleLabel.text = String(roomsList?[indexPath.row].friends.count ?? 0)
+        let count : String = String(roomsList?[indexPath.row].friends.count ?? 0)
+        cell.totalCountOfPeopleLabel.text = count
         cell.placeLabel.text = roomsList?[indexPath.row].location.name
         return cell
     }
@@ -69,7 +76,7 @@ extension RoomsViewController: UITableViewDelegate {
         let roomVC = EnteredRoomViewController()
         navigationController?.pushViewController(roomVC, animated: true)
         
-        roomVC.frineds = roomsList?[indexPath.row].friends
+        roomVC.friends = roomsList?[indexPath.row].friends
         roomVC.placeName = roomsList?[indexPath.row].location.name ?? ""
         roomVC.placeCoordinate = roomsList?[indexPath.row].location.coordinate ?? []
         roomVC.money = roomsList?[indexPath.row].money ?? 0
