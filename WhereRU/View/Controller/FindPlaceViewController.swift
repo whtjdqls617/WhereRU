@@ -42,6 +42,8 @@ class FindPlaceViewController: BaseViewController {
         
         currentLocation = CLLocationCoordinate2D(latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.longitude ?? 0.0)
         
+        findPlaceView.mapView.delegate = self
+        
         locationSearchTable.delegate = self
         locationSearchTable.modalPresentationStyle = .fullScreen
     }
@@ -113,19 +115,7 @@ extension FindPlaceViewController {
 
 extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        findPlaceView.mapView.clear()
-        let zoomCamera = GMSCameraUpdate.zoomIn()
-        findPlaceView.mapView.animate(with: zoomCamera)
-        let newPlace = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
-        print(newPlace.distance(from: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)))
-        
-        let marker = GMSMarker(position: newPlace)
-        marker.icon = UIImage(named: "custom_pin.png")
-        marker.map = findPlaceView.mapView
-        
-        let newCamera = GMSCameraUpdate.setTarget(newPlace)
-        findPlaceView.mapView.moveCamera(newCamera)
-        
+        createAndMoveToMarker(place.coordinate)
         delegate?.getPlaceInfo(place.name, place.coordinate.latitude, place.coordinate.longitude)
         dismiss(animated: true)
     }
@@ -136,5 +126,34 @@ extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
         dismiss(animated: true)
+    }
+}
+
+extension FindPlaceViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        print(marker.position)
+        return true
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        createAndMoveToMarker(coordinate)
+    }
+}
+
+// MARK: Utils
+
+extension FindPlaceViewController {
+    func createAndMoveToMarker(_ coordinate : CLLocationCoordinate2D) {
+        findPlaceView.mapView.clear()
+        let zoomCamera = GMSCameraUpdate.zoomIn()
+        findPlaceView.mapView.animate(with: zoomCamera)
+        let newPlace = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        
+        let marker = GMSMarker(position: newPlace)
+        marker.icon = UIImage(named: "custom_pin.png")
+        marker.map = findPlaceView.mapView
+        
+        let newCamera = GMSCameraUpdate.setTarget(newPlace)
+        findPlaceView.mapView.moveCamera(newCamera)
     }
 }

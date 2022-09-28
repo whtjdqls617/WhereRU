@@ -55,21 +55,4 @@ class EnteredRoomFriendsCollectionViewCell: UICollectionViewCell {
             nickNameLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
-    
-    
-//    func checkStatus(_ index : Int, _ roomName : String, _ friends : [[String : String?]]?) {
-//        let id = (friends?[index]["id"] ?? "") ?? ""
-//        FirebaseManager().getUserStatus(id, roomName) { user in
-//            if let user = user {
-//                print(user.status)
-//                DispatchQueue.main.async {
-//                    if user.status == true {
-//                        self.nickNameLabel.tintColor = .systemGreen
-//                    } else {
-//                        self.nickNameLabel.tintColor = .black
-//                    }
-//                }
-//            }
-//        }
-//    }
 }

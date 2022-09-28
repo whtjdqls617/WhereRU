@@ -24,22 +24,22 @@ class SignUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        signUpView.emailCheckButton.addTarget(self, action: #selector(pressCheckEmailButton), for: .touchUpInside)
+//        signUpView.emailCheckButton.addTarget(self, action: #selector(pressCheckEmailButton), for: .touchUpInside)
 
         signUpView.finishButton.addTarget(self, action: #selector(pressFinishButton), for: .touchUpInside)
     }
     
-    @objc func pressCheckEmailButton() {
-        firebaseManager.checkVaildEmailFromFirestore(signUpView.emailTextField.text ?? "") {[weak self] result in
-            if result == true {
-                self?.signUpView.emailCheckButton.backgroundColor = .systemGreen
-                self?.validEmail = true
-            } else {
-                self?.signUpView.emailCheckButton.backgroundColor = .systemGray
-                self?.validEmail = false
-            }
-        }
-    }
+//    @objc func pressCheckEmailButton() {
+//        firebaseManager.checkVaildEmailFromFirestore(signUpView.emailTextField.text ?? "") {[weak self] result in
+//            if result == true {
+//                self?.signUpView.emailCheckButton.backgroundColor = .systemGreen
+//                self?.validEmail = true
+//            } else {
+//                self?.signUpView.emailCheckButton.backgroundColor = .systemGray
+//                self?.validEmail = false
+//            }
+//        }
+//    }
     
     @objc func pressFinishButton() {
         if validEmail == true {
