@@ -12,6 +12,7 @@ struct Room : Codable {
     let location : Location
     let money : Int
     let name : String
+//    let timestamp : String
 }
 
 struct Location : Codable {
@@ -19,8 +20,7 @@ struct Location : Codable {
     let name : String
 }
 
-struct User : Codable {
-    let email : String
-    let nickName : String
-    let rooms : [Room]
+struct FriendInRoom : Codable {
+    let id : String
+    let status : Bool
 }

@@ -11,6 +11,7 @@ import CoreLocation
 class RoomsViewModel {
     
     @Published var roomsList : [Room]?
+    @Published var friendsInRoomList : [[FriendInRoom]]?
     
     let firebaseManager = FirebaseManager()
     
