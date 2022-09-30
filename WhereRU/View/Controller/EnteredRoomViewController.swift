@@ -79,7 +79,8 @@ extension EnteredRoomViewController {
             self?.friendsStatus = updatedStatusList
             DispatchQueue.main.async {
                 self?.enteredRoomView.friendsCollecionView.reloadData()
-                if ((self?.enteredRoomViewModel.reflectMyStatus()) != nil) {
+                let status = self?.enteredRoomViewModel.reflectMyStatus()
+                if status == true {
                     self?.enteredRoomView.arriveButton.isEnabled = false
                     self?.enteredRoomView.arriveButton.backgroundColor = .systemGray
                     self?.enteredRoomView.arriveStatusImageView.image = UIImage(systemName: "checkmark.circle")

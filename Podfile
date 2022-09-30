@@ -24,6 +24,9 @@ end
 	pod 'KakaoSDKFriend'
 	pod 'KakaoSDKTalk'
 
+	# FloatingPanel
+	pod 'FloatingPanel'
+
 # Pods for kakaoTestApp
 
 	target 'WhereRUTests' do

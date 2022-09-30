@@ -94,7 +94,7 @@ extension CreateRoomViewController {
 }
 
 extension CreateRoomViewController: SelectLocationDelegate {
-    func getPlaceInfo(_ destination : String?, _ latitude : Double, _ longitude : Double) {
+    func sendInfoToCreateRoom(_ destination: String?, _ latitude: Double, _ longitude: Double) {
         if let destination = destination {
             print(destination)
             createRoomView.placeInputLabel.text = destination
