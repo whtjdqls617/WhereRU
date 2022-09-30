@@ -646,6 +646,7 @@ PODS:
   - FirebaseStorageInternal (9.6.0):
     - FirebaseCore (~> 9.0)
     - GTMSessionFetcher/Core (< 3.0, >= 1.7)
+  - FloatingPanel (2.5.4)
   - GoogleDataTransport (9.2.0):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30910.0, >= 2.30908.0)
@@ -753,6 +754,7 @@ DEPENDENCIES:
   - FirebaseAuth
   - FirebaseFirestore
   - FirebaseStorage
+  - FloatingPanel
   - KakaoSDKFriend
   - KakaoSDKTalk
 
@@ -771,6 +773,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseStorage
     - FirebaseStorageInternal
+    - FloatingPanel
     - GoogleDataTransport
     - GoogleUtilities
     - "gRPC-C++"
@@ -801,6 +804,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: c09ce6d050745a45fb75ebd901005ed3279c3caf
   FirebaseStorage: 1fead543a1f441c3b434c1c9f12560dd82f8b568
   FirebaseStorageInternal: 81d8a597324ccd06c41a43c5700bc1185a2fc328
+  FloatingPanel: 387377aa46a9b088e5f8f5f2a8d2c00c61e67298
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
   "gRPC-C++": 9675f953ace2b3de7c506039d77be1f2e77a8db2
@@ -817,6 +821,6 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
 
-PODFILE CHECKSUM: 6413d63ffecd839d007a5b7c3b5652fbce52516b
+PODFILE CHECKSUM: 5149235e8e25dd5941bd16bc14c17d5488a6d599
 
 COCOAPODS: 1.11.3

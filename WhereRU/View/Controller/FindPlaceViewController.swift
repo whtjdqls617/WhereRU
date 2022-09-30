@@ -9,12 +9,15 @@ import UIKit
 import CoreLocation
 import GoogleMaps
 import GooglePlaces
+import FloatingPanel
 
 protocol SelectLocationDelegate {
-    func getPlaceInfo(_ destination : String?, _ latitude : Double, _ longitude : Double)
+    func sendInfoToCreateRoom(_ destination : String?, _ latitude : Double, _ longitude : Double)
 }
 
 class FindPlaceViewController: BaseViewController {
+    
+    var isSelectViewOnScreen = 0
     
     let findPlaceView = FindPlaceView()
     
@@ -27,7 +30,7 @@ class FindPlaceViewController: BaseViewController {
     var currentLocation : CLLocationCoordinate2D?
     
     var delegate : SelectLocationDelegate?
-    
+            
     override func loadView() {
         self.view = findPlaceView
         
@@ -48,7 +51,16 @@ class FindPlaceViewController: BaseViewController {
         locationSearchTable.modalPresentationStyle = .fullScreen
     }
     
+    override func willMove(toParent parent: UIViewController?) {
+        if isSelectViewOnScreen == 1 {
+            dismiss(animated: true)
+        }
+    }
+    
     @objc func pressSearchButton() {
+        if isSelectViewOnScreen == 1 {
+            dismiss(animated: true)
+        }
         present(locationSearchTable, animated: true)
     }
     
@@ -116,8 +128,8 @@ extension FindPlaceViewController {
 extension FindPlaceViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         createAndMoveToMarker(place.coordinate)
-        delegate?.getPlaceInfo(place.name, place.coordinate.latitude, place.coordinate.longitude)
         dismiss(animated: true)
+        showSelectModal(place.name ?? "", place.coordinate.latitude, place.coordinate.longitude)
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -137,6 +149,23 @@ extension FindPlaceViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         createAndMoveToMarker(coordinate)
+        // 위도, 경도로 이름 및 도로명 주소 가져오기
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "Ko-kr")
+        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, _ in
+            guard let placemarks = placemarks,
+                  let address = placemarks.last else { return }
+            self.showSelectModal(address.name ?? "", coordinate.latitude, coordinate.longitude)
+        }
+    }
+    
+}
+
+extension FindPlaceViewController: SearchLocationDelegate {
+    func sendInfoToFindPlace(_ destination: String?, _ latitude: Double, _ longitude: Double) {
+        delegate?.sendInfoToCreateRoom(destination, latitude, longitude)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -151,9 +180,49 @@ extension FindPlaceViewController {
         
         let marker = GMSMarker(position: newPlace)
         marker.icon = UIImage(named: "custom_pin.png")
+        marker.icon = GMSMarker.markerImage(with: .systemPink)
         marker.map = findPlaceView.mapView
         
         let newCamera = GMSCameraUpdate.setTarget(newPlace)
         findPlaceView.mapView.moveCamera(newCamera)
+    }
+    
+    func showSelectModal(_ placeName : String, _ latitude : Double, _ longitude : Double) {
+        print(placeName)
+        let fpc = FloatingPanelController()
+        fpc.layout = MyFloatingPanelLayout()
+        
+        let contentVC = SelectPlaceModalViewController()
+        contentVC.delegate = self
+        contentVC.selectPlaceModalView.placeNameLabel.text = placeName
+        contentVC.destination = placeName
+        contentVC.latitude = latitude
+        contentVC.longitude = longitude
+        fpc.set(contentViewController: contentVC)
+        
+        
+        if isSelectViewOnScreen == 1 {
+            dismiss(animated: true)
+        }
+        
+        isSelectViewOnScreen = 1
+        
+        present(fpc, animated: true)
+    }
+}
+
+class MyFloatingPanelLayout: FloatingPanelLayout {
+    var position: FloatingPanelPosition {
+        return .bottom
+    }
+    
+    var initialState: FloatingPanelState {
+        return .tip
+    }
+    
+    var anchors: [FloatingPanelState : FloatingPanelLayoutAnchoring] {
+        return [
+            .tip: FloatingPanelLayoutAnchor(absoluteInset: 100, edge: .bottom, referenceGuide: .safeArea)
+        ]
     }
 }
