@@ -148,15 +148,20 @@ extension FindPlaceViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        createAndMoveToMarker(coordinate)
         // 위도, 경도로 이름 및 도로명 주소 가져오기
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        let geocoder = CLGeocoder()
-        let locale = Locale(identifier: "Ko-kr")
-        geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, _ in
-            guard let placemarks = placemarks,
-                  let address = placemarks.last else { return }
-            self.showSelectModal(address.name ?? "", coordinate.latitude, coordinate.longitude)
+        if isSelectViewOnScreen == 0 {
+            createAndMoveToMarker(coordinate)
+            let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            let geocoder = CLGeocoder()
+            let locale = Locale(identifier: "Ko-kr")
+            geocoder.reverseGeocodeLocation(location, preferredLocale: locale) { placemarks, _ in
+                guard let placemarks = placemarks,
+                      let address = placemarks.last else { return }
+                self.showSelectModal(address.name ?? "", coordinate.latitude, coordinate.longitude)
+            }
+        } else {
+            isSelectViewOnScreen = 0
+            dismiss(animated: true)
         }
     }
     
