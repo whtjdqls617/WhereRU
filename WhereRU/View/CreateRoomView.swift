@@ -9,6 +9,21 @@ import UIKit
 
 class CreateRoomView: UIView {
     
+    let addFriendsLabel : UILabel = {
+        let label = UILabel()
+        label.text = "친구 추가"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let addFriendsButton : UIButton = {
+        let button = UIButton()
+        button.tintColor = .systemBlue
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     let friendsCollecionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.register(AddedFriendsCollectionViewCell.self, forCellWithReuseIdentifier: AddedFriendsCollectionViewCell.identifier)
@@ -111,6 +126,8 @@ class CreateRoomView: UIView {
             buttonStackView.addArrangedSubview($0)
         }
         
+        self.addSubview(addFriendsLabel)
+        self.addSubview(addFriendsButton)
         self.addSubview(friendsCollecionView)
         self.addSubview(placeStackView)
         self.addSubview(moneyStackView)
@@ -123,7 +140,13 @@ class CreateRoomView: UIView {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             
-            friendsCollecionView.topAnchor.constraint(equalTo: self.topAnchor),
+            addFriendsLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            addFriendsLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
+            
+            addFriendsButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            addFriendsButton.leadingAnchor.constraint(equalTo: addFriendsLabel.trailingAnchor, constant: 10),
+            
+            friendsCollecionView.topAnchor.constraint(equalTo: self.addFriendsLabel.bottomAnchor),
             friendsCollecionView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
             friendsCollecionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 10),
             friendsCollecionView.bottomAnchor.constraint(equalTo: self.centerYAnchor),
@@ -139,7 +162,6 @@ class CreateRoomView: UIView {
             buttonStackView.topAnchor.constraint(equalTo: moneyStackView.bottomAnchor, constant: 50),
             buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            buttonStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 

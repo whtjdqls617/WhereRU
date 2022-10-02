@@ -29,11 +29,12 @@ class CreateRoomViewController: BaseViewController {
         createRoomView.friendsCollecionView.dataSource = self
         
         setBinding()
+        navigationItem.title = "방 만들기"
         
-        let button = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(pressPlusButton))
-        navigationItem.rightBarButtonItem = button
-        navigationItem.title = "친구 추가"
-                
+        let tapAdd = UITapGestureRecognizer(target: self, action: #selector(pressPlusButton))
+        createRoomView.addFriendsButton.isUserInteractionEnabled = true
+        createRoomView.addFriendsButton.addGestureRecognizer(tapAdd)
+        
         let tapPlace = UITapGestureRecognizer(target: self, action: #selector(pressFindPlaceButton))
         createRoomView.placeInputLabel.isUserInteractionEnabled = true
         createRoomView.placeInputLabel.addGestureRecognizer(tapPlace)
