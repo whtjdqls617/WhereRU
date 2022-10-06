@@ -31,6 +31,7 @@ class FriendsViewController: BaseViewController {
         setBinding()
         friendsViewModel.getFriendsListFromKakao()
         friendsViewModel.saveMyIdFromKakao()
+        
 //        disconnectAccount()
     }
     

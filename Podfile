@@ -19,6 +19,8 @@ end
 	pod 'FirebaseAuth'
 	pod 'FirebaseFirestore'
 	pod 'FirebaseStorage'
+	pod 'FirebaseMessaging'
+	pod 'FirebaseAnalytics'
 
 	# Kakao
 	pod 'KakaoSDKFriend'
