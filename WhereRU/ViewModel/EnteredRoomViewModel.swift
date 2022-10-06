@@ -13,6 +13,7 @@ class EnteredRoomViewModel {
     let locationManager = CLLocationManager()
     var currentLocation : CLLocationCoordinate2D?
     let firebaseManager = FirebaseManager()
+    var destination : [Double]?
     
     @Published var friendsStatus : [FriendInRoom]?
     

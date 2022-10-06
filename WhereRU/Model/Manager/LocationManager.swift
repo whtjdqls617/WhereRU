@@ -13,6 +13,5 @@ class LocationManager {
     static let locationManager = CLLocationManager()
     
     private init() {}
-    
-    
+
 }

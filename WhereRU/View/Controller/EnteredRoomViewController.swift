@@ -8,6 +8,8 @@
 import UIKit
 import KakaoSDKFriend
 import Combine
+import GoogleMaps
+import GooglePlaces
 
 class EnteredRoomViewController: BaseViewController {
     
@@ -23,6 +25,7 @@ class EnteredRoomViewController: BaseViewController {
     
     let enteredRoomView = EnteredRoomView()
     let enteredRoomViewModel = EnteredRoomViewModel()
+    let findPlaceViewController = FindPlaceViewController()
     
     override func loadView() {
         super.loadView()
@@ -37,6 +40,7 @@ class EnteredRoomViewController: BaseViewController {
         configure()
         setBinding()
         exportID()
+        
         let tapArrive = UITapGestureRecognizer(target: self, action: #selector(pressArriveButton))
         enteredRoomView.arriveButton.isUserInteractionEnabled = true
         enteredRoomView.arriveButton.addGestureRecognizer(tapArrive)
@@ -45,11 +49,33 @@ class EnteredRoomViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         enteredRoomViewModel.reflectStatus(roomName)
+        moveToDestination()
     }
     
     func configure() {
         enteredRoomView.placeInputLabel.text = placeName
         enteredRoomView.moneyInputLabel.text = String(money)
+    }
+    
+    func moveToDestination() {
+        let latitude = placeCoordinate[0]
+        let longitude = placeCoordinate[1]
+        let zoomCamera = GMSCameraUpdate.zoomIn()
+        enteredRoomView.mapView.animate(with: zoomCamera)
+        let destination = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        let marker = GMSMarker(position: destination)
+        marker.icon = UIImage(named: "custom_pin.png")
+        marker.icon = GMSMarker.markerImage(with: .systemPink)
+        marker.map = enteredRoomView.mapView
+        
+        let circle = GMSCircle(position: destination, radius: 50)
+        circle.fillColor = UIColor(red: 33/255, green: 146/255, blue: 255/255, alpha: 0.5)
+        circle.strokeWidth = 0
+        circle.map = enteredRoomView.mapView
+        
+        let newCamera = GMSCameraUpdate.setTarget(destination)
+        enteredRoomView.mapView.moveCamera(newCamera)
     }
     
     func exportID() {

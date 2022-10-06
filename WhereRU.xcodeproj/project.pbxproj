@@ -49,10 +49,10 @@
 		C7586E2128C9F3A2003B6639 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2028C9F3A2003B6639 /* SignUpView.swift */; };
 		C7586E2328C9F3B9003B6639 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2228C9F3B9003B6639 /* SignInViewController.swift */; };
 		C7586E2528C9F3C3003B6639 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */; };
-		C7586E8A28CDC566003B6639 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7586E8928CDC566003B6639 /* GoogleService-Info.plist */; };
 		C75D194128DA09B10062732F /* Friends.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D194028DA09B10062732F /* Friends.swift */; };
 		C75D194328DA0A890062732F /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D194228DA0A890062732F /* FriendsViewModel.swift */; };
 		C75D194528DA0ACD0062732F /* KakaoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75D194428DA0ACD0062732F /* KakaoManager.swift */; };
+		C7626B9F28ED884700C12F9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C7626B9E28ED884700C12F9C /* GoogleService-Info.plist */; };
 		C7838A6328DAED8500D6D79A /* AddFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7838A6228DAED8500D6D79A /* AddFriendTableViewCell.swift */; };
 		C7838A7128DAFE5E00D6D79A /* WhereRUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7838A6A28DAFDD400D6D79A /* WhereRUTests.swift */; };
 		C7838A7928DB003100D6D79A /* WhereRUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7838A7828DB003100D6D79A /* WhereRUTests.swift */; };
@@ -150,15 +150,15 @@
 		C7586E2028C9F3A2003B6639 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C7586E2228C9F3B9003B6639 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		C7586E2428C9F3C3003B6639 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		C7586E8928CDC566003B6639 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C75D194028DA09B10062732F /* Friends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friends.swift; sourceTree = "<group>"; };
 		C75D194228DA0A890062732F /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		C75D194428DA0ACD0062732F /* KakaoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoManager.swift; sourceTree = "<group>"; };
+		C7626B9E28ED884700C12F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C7838A6228DAED8500D6D79A /* AddFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendTableViewCell.swift; sourceTree = "<group>"; };
 		C7838A6A28DAFDD400D6D79A /* WhereRUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUTests.swift; sourceTree = "<group>"; };
-		C7838A7628DB003100D6D79A /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7838A7628DB003100D6D79A /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUTests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUTests.xctest"; sourceTree = "<absolute>"; };
 		C7838A7828DB003100D6D79A /* WhereRUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUTests.swift; sourceTree = "<group>"; };
-		C7838A8328DB003700D6D79A /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7838A8328DB003700D6D79A /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUUITests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUUITests.xctest"; sourceTree = "<absolute>"; };
 		C7838A8528DB003700D6D79A /* WhereRUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUUITests.swift; sourceTree = "<group>"; };
 		C7838A8728DB003700D6D79A /* WhereRUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7838A8E28DB007400D6D79A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -327,8 +327,6 @@
 				C7838A7728DB003100D6D79A /* WhereRUTests */,
 				C7838A8428DB003700D6D79A /* WhereRUUITests */,
 				C72B16D828D82B47001FAEE7 /* Frameworks */,
-				C7838A7628DB003100D6D79A /* WhereRUTests.xctest */,
-				C7838A8328DB003700D6D79A /* WhereRUUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,7 +340,7 @@
 				C7D31A4028BF525E00940AFE /* Resource */,
 				C7D31A3D28BF522200940AFE /* Application */,
 				C7D31A1B28BF51E100940AFE /* Info.plist */,
-				C7586E8928CDC566003B6639 /* GoogleService-Info.plist */,
+				C7626B9E28ED884700C12F9C /* GoogleService-Info.plist */,
 			);
 			path = WhereRU;
 			sourceTree = "<group>";
@@ -594,8 +592,8 @@
 			files = (
 				C72B171328D83779001FAEE7 /* GooglePlaces.bundle in Resources */,
 				C7D31A1A28BF51E100940AFE /* LaunchScreen.storyboard in Resources */,
+				C7626B9F28ED884700C12F9C /* GoogleService-Info.plist in Resources */,
 				C7D31A1728BF51E100940AFE /* Assets.xcassets in Resources */,
-				C7586E8A28CDC566003B6639 /* GoogleService-Info.plist in Resources */,
 				C72B171528D83787001FAEE7 /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

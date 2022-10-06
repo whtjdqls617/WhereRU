@@ -45,7 +45,7 @@ class SignUpViewController: BaseViewController {
         if validEmail == true {
             let email = signUpView.emailTextField.text ?? ""
             let password = signUpView.passwordTextField.text ?? ""
-            let nickName = signUpView.nickNameTextField.text ?? ""
+//            let nickName = signUpView.nickNameTextField.text ?? ""
             Auth.auth().createUser(withEmail: email, password: password)
 //            firebaseManager.uploadDataToFirestore(email, nickName)
             dismiss(animated: true)
