@@ -112,4 +112,10 @@ class FirebaseManager {
         return nil
     }
     
+    func setFCMToken(_ token: String?, _ id : String) {
+        if let token = token {
+            db.collection("Users").document(id).updateData(["token" : token])
+        }
+    }
+    
 }

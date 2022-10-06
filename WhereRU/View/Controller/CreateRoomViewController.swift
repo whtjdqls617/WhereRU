@@ -75,6 +75,7 @@ class CreateRoomViewController: BaseViewController {
         guard let friends = selectedFriends else {return}
         let limitTime = "6:00"
         createRoomViewModel.updateRoomsList(name, location, money, friends, limitTime)
+        // http post 요청을 해야한다. (각각의 토큰 알아야함, 방이름)
         dismiss(animated: true)
     }
     

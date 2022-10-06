@@ -109,6 +109,7 @@
 		95265801D1D537C7037C9455 /* Pods-WhereRU-WhereRUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhereRU-WhereRUUITests.release.xcconfig"; path = "Target Support Files/Pods-WhereRU-WhereRUUITests/Pods-WhereRU-WhereRUUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A7B67082111DCE1FC5449EB0 /* Pods_WhereRU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D + extension.swift"; sourceTree = "<group>"; };
+		C70DB29028EE99E9009C3577 /* WhereRU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhereRU.entitlements; sourceTree = "<group>"; };
 		C72B16D928D82B47001FAEE7 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = Carthage/Build/GoogleMaps.xcframework; sourceTree = "<group>"; };
 		C72B16DB28D82B4C001FAEE7 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = Carthage/Build/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
 		C72B16DC28D82B4C001FAEE7 /* GoogleMapsM4B.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsM4B.xcframework; path = Carthage/Build/GoogleMapsM4B.xcframework; sourceTree = "<group>"; };
@@ -154,11 +155,11 @@
 		C75D194228DA0A890062732F /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
 		C75D194428DA0ACD0062732F /* KakaoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoManager.swift; sourceTree = "<group>"; };
 		C7626B9E28ED884700C12F9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C7626BA628EE973F00C12F9C /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7626BA728EE973F00C12F9C /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhereRUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7838A6228DAED8500D6D79A /* AddFriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendTableViewCell.swift; sourceTree = "<group>"; };
 		C7838A6A28DAFDD400D6D79A /* WhereRUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUTests.swift; sourceTree = "<group>"; };
-		C7838A7628DB003100D6D79A /* WhereRUTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUTests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUTests.xctest"; sourceTree = "<absolute>"; };
 		C7838A7828DB003100D6D79A /* WhereRUTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUTests.swift; sourceTree = "<group>"; };
-		C7838A8328DB003700D6D79A /* WhereRUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WhereRUUITests.xctest; path = "/Users/seocho/iOS/WhereRU/build/Debug-iphoneos/WhereRUUITests.xctest"; sourceTree = "<absolute>"; };
 		C7838A8528DB003700D6D79A /* WhereRUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUUITests.swift; sourceTree = "<group>"; };
 		C7838A8728DB003700D6D79A /* WhereRUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhereRUUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7838A8E28DB007400D6D79A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -327,12 +328,15 @@
 				C7838A7728DB003100D6D79A /* WhereRUTests */,
 				C7838A8428DB003700D6D79A /* WhereRUUITests */,
 				C72B16D828D82B47001FAEE7 /* Frameworks */,
+				C7626BA628EE973F00C12F9C /* WhereRUTests.xctest */,
+				C7626BA728EE973F00C12F9C /* WhereRUUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
 		C7D31A0C28BF51DF00940AFE /* WhereRU */ = {
 			isa = PBXGroup;
 			children = (
+				C70DB29028EE99E9009C3577 /* WhereRU.entitlements */,
 				C7D31A5828C1CE4E00940AFE /* Model */,
 				C7D31A3E28BF522F00940AFE /* View */,
 				C7D31A4128BF529000940AFE /* ViewModel */,
@@ -486,7 +490,7 @@
 			);
 			name = WhereRUTests;
 			productName = WhereRUTests;
-			productReference = C7838A7628DB003100D6D79A /* WhereRUTests.xctest */;
+			productReference = C7626BA628EE973F00C12F9C /* WhereRUTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C7838A8228DB003700D6D79A /* WhereRUUITests */ = {
@@ -506,7 +510,7 @@
 			);
 			name = WhereRUUITests;
 			productName = WhereRUUITests;
-			productReference = C7838A8328DB003700D6D79A /* WhereRUUITests.xctest */;
+			productReference = C7626BA728EE973F00C12F9C /* WhereRUUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		C7D31A0928BF51DF00940AFE /* WhereRU */ = {
@@ -995,6 +999,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = WhereRU/WhereRU.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RLXHF6WVG6;
@@ -1034,6 +1039,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = WhereRU/WhereRU.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RLXHF6WVG6;

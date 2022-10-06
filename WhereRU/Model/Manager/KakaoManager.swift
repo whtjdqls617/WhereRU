@@ -12,6 +12,8 @@ import KakaoSDKUser
 
 class KakaoManager {
     
+    let firebaseManager = FirebaseManager()
+    
     func saveMyId() {
         UserApi.shared.me() {(user, error) in
             if let error = error {
@@ -19,8 +21,15 @@ class KakaoManager {
             }
             else {
                 UserDefaults.standard.set(user?.id, forKey: "id")
+                let id = String(user?.id ?? 0)
+                self.saveMyToken(id)
             }
         }
+    }
+    
+    func saveMyToken(_ id : String) {
+        let token = UserDefaults.standard.string(forKey: "token")
+        firebaseManager.setFCMToken(token, id)
     }
     
     func getFriendsListFromKakao(completion: @escaping (FriendsList?) -> Void) {

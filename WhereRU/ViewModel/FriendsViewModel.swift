@@ -12,6 +12,7 @@ class FriendsViewModel {
     @Published var friendsList : FriendsList?
     
     let kakaoManager = KakaoManager()
+    let firebaseManager = FirebaseManager()
     
     func saveMyIdFromKakao() {
         kakaoManager.saveMyId()
