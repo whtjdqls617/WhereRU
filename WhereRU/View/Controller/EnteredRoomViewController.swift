@@ -19,6 +19,7 @@ class EnteredRoomViewController: BaseViewController {
     var placeCoordinate = [Double]()
     var money : Int = 0
     var roomName : String = ""
+    var notificationKey : String = ""
         
     var friendsStatus : [FriendInRoom]?
     private var disposalbleBag = Set<AnyCancellable>()
@@ -87,7 +88,7 @@ class EnteredRoomViewController: BaseViewController {
     }
     
     @objc func pressArriveButton() {
-        if enteredRoomViewModel.checkArrive(ids, placeCoordinate, roomName) {
+        if enteredRoomViewModel.checkArrive(ids, placeCoordinate, roomName, notificationKey) {
             enteredRoomView.arriveButton.isEnabled = false
             enteredRoomView.arriveButton.backgroundColor = .systemGray
             enteredRoomView.arriveStatusImageView.image = UIImage(systemName: "checkmark.circle")

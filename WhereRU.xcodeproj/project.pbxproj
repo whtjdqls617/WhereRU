@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		00AA1A16EDE7C82F0C773936 /* Pods_WhereRUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE4E1B0CB3D91099AED7A84 /* Pods_WhereRUTests.framework */; };
 		C700870F28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */; };
+		C70DB29228F52A01009C3577 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DB29128F52A01009C3577 /* User.swift */; };
+		C70DB29428F53B81009C3577 /* FCMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70DB29328F53B81009C3577 /* FCMManager.swift */; };
 		C72B16E128D82B9B001FAEE7 /* GoogleMaps.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72B16D928D82B47001FAEE7 /* GoogleMaps.xcframework */; };
 		C72B16E328D82B9B001FAEE7 /* GoogleMapsBase.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72B16DB28D82B4C001FAEE7 /* GoogleMapsBase.xcframework */; };
 		C72B16E528D82B9B001FAEE7 /* GoogleMapsCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72B16DD28D82B4C001FAEE7 /* GoogleMapsCore.xcframework */; };
@@ -110,6 +112,8 @@
 		A7B67082111DCE1FC5449EB0 /* Pods_WhereRU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhereRU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C700870E28C85D2F00FC7709 /* CLLocationCoordinate2D + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D + extension.swift"; sourceTree = "<group>"; };
 		C70DB29028EE99E9009C3577 /* WhereRU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WhereRU.entitlements; sourceTree = "<group>"; };
+		C70DB29128F52A01009C3577 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C70DB29328F53B81009C3577 /* FCMManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FCMManager.swift; sourceTree = "<group>"; };
 		C72B16D928D82B47001FAEE7 /* GoogleMaps.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMaps.xcframework; path = Carthage/Build/GoogleMaps.xcframework; sourceTree = "<group>"; };
 		C72B16DB28D82B4C001FAEE7 /* GoogleMapsBase.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsBase.xcframework; path = Carthage/Build/GoogleMapsBase.xcframework; sourceTree = "<group>"; };
 		C72B16DC28D82B4C001FAEE7 /* GoogleMapsM4B.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMapsM4B.xcframework; path = Carthage/Build/GoogleMapsM4B.xcframework; sourceTree = "<group>"; };
@@ -444,6 +448,7 @@
 			children = (
 				C75D194028DA09B10062732F /* Friends.swift */,
 				C74ABA4628DF2D19007EE11B /* Rooms.swift */,
+				C70DB29128F52A01009C3577 /* User.swift */,
 				C7D31A5928C1CE5300940AFE /* Manager */,
 			);
 			path = Model;
@@ -455,6 +460,7 @@
 				C7D31A5A28C1CE6300940AFE /* LocationManager.swift */,
 				C7CFA81528D1A687008AA02C /* FirebaseManager.swift */,
 				C75D194428DA0ACD0062732F /* KakaoManager.swift */,
+				C70DB29328F53B81009C3577 /* FCMManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -746,9 +752,11 @@
 				C74ABA5928E5E6F1007EE11B /* SelectPlaceModalViewController.swift in Sources */,
 				C74ABA4728DF2D19007EE11B /* Rooms.swift in Sources */,
 				C7D31A5F28C1D2A200940AFE /* CreateRoomViewController.swift in Sources */,
+				C70DB29428F53B81009C3577 /* FCMManager.swift in Sources */,
 				C74ABA5128E0A340007EE11B /* EnteredRoomViewController.swift in Sources */,
 				C74ABA5728E5E6D0007EE11B /* SelectPlaceModalView.swift in Sources */,
 				C7D31A6628C474B700940AFE /* FindPlaceViewController.swift in Sources */,
+				C70DB29228F52A01009C3577 /* User.swift in Sources */,
 				C7838A7128DAFE5E00D6D79A /* WhereRUTests.swift in Sources */,
 				C7838A6328DAED8500D6D79A /* AddFriendTableViewCell.swift in Sources */,
 				C74ABA4928DF2F0B007EE11B /* Codable.swift in Sources */,

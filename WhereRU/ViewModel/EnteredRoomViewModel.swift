@@ -17,12 +17,13 @@ class EnteredRoomViewModel {
     
     @Published var friendsStatus : [FriendInRoom]?
     
-    func checkArrive(_ ids : [String], _ destination : [Double], _ roomName : String) -> Bool {
+    func checkArrive(_ ids : [String], _ destination : [Double], _ roomName : String, _ notificationKey : String) -> Bool {
         currentLocation = CLLocationCoordinate2D(latitude: locationManager.location?.coordinate.latitude ?? 0.0, longitude: locationManager.location?.coordinate.longitude ?? 0.0)
         let destination = CLLocationCoordinate2D(latitude: destination[0], longitude: destination[1])
         let distance = Int(destination.distance(from: currentLocation ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)))
         if distance < 50 {
             // 파이어베이스 에서 status = true로 바꾸기
+            sendMessageToUsers(notificationKey)
             changeUserStatusOfFirestore(ids, roomName)
             return true
         } else {
@@ -33,6 +34,10 @@ class EnteredRoomViewModel {
     func changeUserStatusOfFirestore(_ ids : [String], _ roomName : String) {
         // 유저를 먼저 다 돌면서 도착한 유저의 status를 바꾼다.
         firebaseManager.updateStatus(ids, roomName)
+    }
+    
+    func sendMessageToUsers(_ notificationKey : String) {
+        firebaseManager.postCreateRoomToFCM(notificationKey)
     }
     
     func reflectStatus(_ roomName : String) {
