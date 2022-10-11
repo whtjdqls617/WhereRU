@@ -12,6 +12,7 @@ struct Room : Codable {
     let location : Location
     let money : Int
     let name : String
+    let notificationKey : String
 //    let timestamp : String
 }
 

@@ -21,6 +21,9 @@ class KakaoManager {
             }
             else {
                 UserDefaults.standard.set(user?.id, forKey: "id")
+                UserDefaults.standard.set("AAAArVqJom8:APA91bG-Trol-FRvIPVnIqVzUWgczMtK_EcOS716-PuyYiz9U7339qRG5N7l6pC_r13wgUFSvtRV9o9YFUgcxemOiUsI5f187zVnE0GzAWThN7VIDkkDU6jsMMPqh9b9zotmVdrUHoJQ", forKey: "serverKey")
+                UserDefaults.standard.set("744548311663", forKey: "projectID")
+                UserDefaults.standard.set(user?.kakaoAccount?.profile?.nickname, forKey: "nickName")
                 let id = String(user?.id ?? 0)
                 self.saveMyToken(id)
             }

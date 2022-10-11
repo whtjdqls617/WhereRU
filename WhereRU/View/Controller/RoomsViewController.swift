@@ -34,6 +34,9 @@ class RoomsViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         roomsViewModel.getRoomdDataFromFirestore()
+        DispatchQueue.main.async {
+            self.roomsView.roomTableView.reloadData()
+        }
     }
     
 }
@@ -81,5 +84,6 @@ extension RoomsViewController: UITableViewDelegate {
         roomVC.placeCoordinate = roomsList?[indexPath.row].location.coordinate ?? []
         roomVC.money = roomsList?[indexPath.row].money ?? 0
         roomVC.roomName = roomsList?[indexPath.row].name ?? ""
+        roomVC.notificationKey = roomsList?[indexPath.row].notificationKey ?? ""
     }
 }

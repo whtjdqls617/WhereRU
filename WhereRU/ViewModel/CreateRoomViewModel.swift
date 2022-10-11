@@ -27,4 +27,8 @@ class CreateRoomViewModel {
     func updateRoomsList(_ name : String, _ location : [String : Any], _ money : Int, _ friends : SelectedUsers, _ limitTime : String) {
         firebaseManager.updateRoomsOfFirestore(name, location, money, friends, limitTime)
     }
+    
+    func createGroupInFCM(_ name : String, _ friends : SelectedUsers) {
+        firebaseManager.createGroupInFCMByHttp(name, friends)
+    }
 }
